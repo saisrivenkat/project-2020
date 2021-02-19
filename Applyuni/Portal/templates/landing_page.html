@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -8,16 +9,16 @@
 	<!-- Stylesheets
 	============================================= -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'style.css" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/swiper.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/dark.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/font-icons.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Document Title
@@ -111,8 +112,8 @@
 						<!-- Logo
 						============================================= -->
 						<div id="logo">
-							<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
-							<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+							<a href="index.html" class="standard-logo" data-dark-logo="{% static 'images/logo-dark.png' %}"><img src="images/logo.png" alt="Canvas Logo"></a>
+							<a href="index.html" class="retina-logo" data-dark-logo="{% static 'images/logo-dark@2x.png' %}"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
 						</div><!-- #logo end -->
 
 
@@ -176,9 +177,9 @@
 								</div>
 							</div>
 							<div class="video-wrap">
-								<video poster="images/videos/explore-poster.jpg" preload="auto" loop autoplay muted>
-									<source src='images/videos/explore.mp4' type='video/mp4' />
-									<source src='images/videos/explore.webm' type='video/webm' />
+								<video poster="{% static 'images/videos/explore-poster.jpg' %}" preload="auto" loop autoplay muted>
+									<source src="{% static 'images/videos/explore.mp4' %}" type='video/mp4' />
+									<source src="{% static 'images/videos/explore.webm' %}" type='video/webm' />
 								</video>
 								<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
 							</div>
@@ -202,7 +203,7 @@
 					<div class="row col-mb-50 " >
 						<div class="col-md-5">
 							<a href="https://vimeo.com/101373765" class="d-block position-relative rounded overflow-hidden" data-lightbox="iframe">
-								<img src="images/others/1.jpg" alt="Image" class="w-100">
+								<img src="{% static 'images/others/1.jpg' %}" alt="Image" class="w-100">
 								<div class="bg-overlay">
 									<div class="bg-overlay-content dark">
 										<i class="i-circled i-light icon-line-play m-0"></i>
@@ -334,14 +335,14 @@
 								</a>
 								<div class="bg-overlay">
 									<div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">
-										<a href="images/portfolio/full/1.jpg" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image"><i class="icon-line-plus"></i></a>
+										<a href="{% static 'images/portfolio/full/1.jpg' %}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image"><i class="icon-line-plus"></i></a>
 										<a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350"><i class="icon-line-ellipsis"></i></a>
 									</div>
 									<div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="350"></div>
 								</div>
 							</div>
 							<div class="portfolio-desc">
-								<h3><a href="portfolio-single.html">Harvard University</a></h3>
+								<h3><a href="#">Harvard University</a></h3>
 								<span><a href="#">Media</a>, <a href="#">Icons</a></span>
 							</div>
 						</div>
@@ -353,7 +354,7 @@
 								</a>
 								<div class="bg-overlay">
 									<div class="bg-overlay-content dark" data-hover-animate="fadeIn" data-hover-speed="350">
-										<a href="images/portfolio/full/2.jpg" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image"><i class="icon-line-plus"></i></a>
+										<a href="{% static 'images/portfolio/full/2.jpg' %}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350" data-lightbox="image"><i class="icon-line-plus"></i></a>
 										<a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeInUpSmall" data-hover-speed="350"><i class="icon-line-ellipsis"></i></a>
 									</div>
 									<div class="bg-overlay-bg dark" data-hover-animate="fadeIn" data-hover-speed="350"></div>
@@ -389,8 +390,8 @@
 								</a>
 								<div class="bg-overlay" data-lightbox="gallery">
 									<div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-										<a href="images/portfolio/full/4.jpg" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
-										<a href="images/portfolio/full/4-1.jpg" class="d-none" data-lightbox="gallery-item"></a>
+										<a href="{% static 'images/portfolio/full/4.jpg' %}" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+										<a href="{% static 'images/portfolio/full/4-1.jpg' %}" class="d-none" data-lightbox="gallery-item"></a>
 										<a href="portfolio-single.html" class="overlay-trigger-icon bg-light text-dark" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350"><i class="icon-line-ellipsis"></i></a>
 									</div>
 									<div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
@@ -417,7 +418,7 @@
 							<li class="grid-item">
 								<div class="testimonial">
 									<div class="testi-image">
-										<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+										<a href="#"><img src="{% static 'images/testimonials/1.jpg' %}" alt="Customer Testimonails"></a>
 									</div>
 									<div class="testi-content">
 										<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum repellendus!</p>
@@ -431,7 +432,7 @@
 							<li class="grid-item">
 								<div class="testimonial">
 									<div class="testi-image">
-										<a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+										<a href="#"><img src="{% static 'images/testimonials/2.jpg' %}" alt="Customer Testimonails"></a>
 									</div>
 									<div class="testi-content">
 										<p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
@@ -445,7 +446,7 @@
 							<li class="grid-item">
 								<div class="testimonial">
 									<div class="testi-image">
-										<a href="#"><img src="images/testimonials/7.jpg" alt="Customer Testimonails"></a>
+										<a href="#"><img src="{% static 'images/testimonials/7.jpg' %}" alt="Customer Testimonails"></a>
 									</div>
 									<div class="testi-content">
 										<p>Fugit officia dolor sed harum excepturi ex iusto magnam asperiores molestiae qui natus obcaecati facere sint amet.</p>
@@ -578,11 +579,11 @@
 
 									<div class="widget clearfix">
 
-										<img src="images/footer-widget-logo.png" alt="Image" class="footer-logo">
+										<img src="{% static 'images/footer-widget-logo.png' %}" alt="Image" class="footer-logo">
 
 										<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
-										<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+										<div style="background: url("{% static 'images/world-map.png' %}") no-repeat center center; background-size: 100%;">
 											<address>
 												<strong>Headquarters:</strong><br>
 												795 Folsom Ave, Suite 600<br>
@@ -734,12 +735,12 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="js/jquery.js"></script>
-	<script src="js/plugins.min.js"></script>
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/plugins.min.js' %}"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="js/functions.js"></script>
+	<script src="{% static 'js/functions.js' %}"></script>
 
 </body>
 </html>
