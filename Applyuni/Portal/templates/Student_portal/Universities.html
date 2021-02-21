@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Shop - Filter | Canvas</title>
+	<style type="text/css">
+		@media (max-width:992px ){
+			.postcontent{
+				order: 13;
+			}
+		}
+	</style>
+
+</head>
+
+<body class="stretched">
+
+
+{% extends "Student_portal/Navbar.html" %}
+
+     {% block content %}
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+		<!-- Page Title
+		============================================= -->
+		<section id="page-title">
+			<div class="container clearfix">
+				<h1>Universities</h1>
+				<span>Explore for the Rich</span>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Categorize</a></li>
+				</ol>
+			</div>
+		</section><!-- #page-title end -->
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+					<div class="row gutter-40 col-mb-80">
+						<!-- Post Content
+						============================================= -->
+						<div class="postcontent col-lg-9 ">
+							<div class="row">
+								<div class="entry event col-12">
+									<div class="grid-inner row no-gutters p-4">
+										<div class="entry-image col-md-5 mb-md-0">
+											<a href="#">
+												<img src="https://www.collegeconsensus.com/wp-content/uploads/2016/12/o-HARVARD-UNIVERSITY-BUILDING-facebook.jpg" alt="Inventore voluptates velit totam ipsa tenetur">
+											</a>
+										</div>
+										<div class="col-md-7 pl-md-4">
+											<div class="entry-title title-sm">
+												<h2><a href="#">University Name</a></h2>
+											</div>
+											<div class="entry-meta">
+												<ul>
+													<li><span class="badge badge-warning py-1 px-2">Sem Type</span></li>
+													<li><a href="#"><i class="icon-time"></i> min fee - max fee</a></li>
+													<li><a href="#"><i class="icon-map-marker2"></i>Address</a></li>
+												</ul>
+											</div>
+											<div class="entry-content">
+												<a href="#" class="btn btn-secondary disabled"><i class="fa fa-heart" style="color: red"></i></a> <a href="#" class="btn btn-success">Apply Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- .postcontent end -->
+						<!-- Sidebar
+						============================================= -->
+						<div class="sidebar col-lg-3 " >
+							<div class="sidebar-widgets-wrap">
+								<div class="widget widget-filter-links" >
+									<h4>Filter by :</h4>
+									<h6>Country</h6>
+									<input type="text" name="" class="form-control">
+								</div>
+								<div class="widget widget-filter-links" style="padding-top: 0!Important">
+									<h6>Fee Range</h6>
+									<div class="row">
+										<div class="col-4">
+											<input type="text" name="" placeholder="min" class="form-control">
+										</div>
+										<div class="col-3">to
+										</div>
+										<div class="col-4">
+											<input type="text" name="" placeholder="max" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="widget widget-filter-links" style="padding-top: 0!Important">
+									<h6>Ranking Range</h6>
+									<div class="row">
+										<div class="col-4">
+											<input type="text" name="" placeholder="min" class="form-control">
+										</div>
+										<div class="col-3">to
+										</div>
+										<div class="col-4">
+											<input type="text" name="" placeholder="max" class="form-control">
+										</div>
+									</div>
+								</div>
+								<div class="widget widget-filter-links" style="padding-top: 0!Important" >
+
+									<h6>Courses</h6>
+									<input type="text" name="" class="form-control">
+								</div>
+								<button class="btn btn-primary mt-3 ml-5" >Apply Changes</button>
+							</div>
+						</div><!-- .sidebar end -->
+					</div>
+
+				</div>
+			</div>
+		</section><!-- #content end -->
+	</div><!-- #wrapper end -->
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+*{
+   font-family: 'Raleway', sans-serif;
+   box-sizing: border-box;
+   padding: 0px;
+   margin: 0px;
+}
+body{
+    background-color: lightcyan;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.row-2{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 5px 50px;
+}
+.box{
+    width: 300px;
+    margin: 50px auto;
+    justify-content: center;
+    height: 300px;
+    flex-wrap: wrap;
+    background-color: rgb(113, 184, 184);
+    align-content: center;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 4px 3px 4px 0px black;
+    cursor: pointer;
+    transition: .5s ease-in-out all;
+}
+.box:hover{
+    background-color: rgb(132, 236, 236);
+    margin-top: 45px;
+}
+.row-1{
+    width: 100%;
+    justify-content: space-around;
+}
+.img{
+    align-items: center;
+    text-align: center;
+}
+h2{
+    margin-top: 15px;
+    color: blueviolet;
+    letter-spacing: 2px;
+}
+p{
+    margin-top: 10px;
+    line-height: 1.5;
+}
+a{
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    bottom: 10px !important;
+}
+a:hover{
+    text-decoration: none;
+}
+.btn{
+    padding: 8px;
+    border-radius: 20px;
+    bottom: 20px;
+}
+.btn:focus{
+    outline: none;
+}
