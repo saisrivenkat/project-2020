@@ -29,7 +29,7 @@ class studentlogin(View):
                 value={'Name':request.session['Firstname']}
                 data={'value':value}
                 #return render(request,'student_portal/studenthome.html',data)
-                return redirect('home')
+                return redirect('/stdnav')
                 '''
                 if studentlogin.return_url():
                     return HttpResponseRedirect(return_url)
