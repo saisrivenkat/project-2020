@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -8,15 +9,15 @@
     <!-- Stylesheets
     ============================================= -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="{% static 'images/bootstrap.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'images/style.css' %}" type="text/css" />
 
-    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="{% static 'images/font-icons.css' %}" type="text/css" />
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+    <link rel="stylesheet" href="{% static 'images/custom.css' %}" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Document Title
@@ -361,6 +362,19 @@
                 </div>
             </div><!-- #copyrights end -->
         </footer><!-- #footer end -->
+
+  <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- JavaScripts
+    ============================================= -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/plugins.min.js' %}"></script>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script src="{% static 'js/functions.js' %}"></script>
 
 
 
