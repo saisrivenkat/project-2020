@@ -35,7 +35,8 @@
         <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
         <div class="wrap-contact100">
-            <form class="contact100-form validate-form">
+            <form class="contact100-form validate-form" action="/stdpro" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="col-lg-11 col-md-12">
                     <span class="contact100-form-title">
                         Personal Information
@@ -47,13 +48,13 @@
                 </div>
 
                 <span class="contact100-form-title">
-                   <h6>English Proficiency &nbsp &nbsp <p id="Add">more</p></h6>
+                   <h6>English Proficiency &nbsp &nbsp <p id=""></p></h6>
                 </span>
 
 
                  <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Testeng" value="{{value.Testeng}}">
         <option selected>Test</option>
         <option>IELTS</option>
         <option>Tofel</option>
@@ -63,17 +64,18 @@
                             </div>
                         </div>
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" name="name" placeholder="Year Taken">
+                    <input class="input100" type="date" name="Yeareng" value="{{value.Yeareng}}" placeholder="Year Taken">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="name" placeholder="Overall Score">
+                    <input class="input100" type="text" name="Overallscoreeng" value="{{value.Overallscoreeng}}" placeholder="Overall Score">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                            <input type="file" class="form-control-file input100" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file input100" name="Uploadeng"  id="Uploadeng">
+                            <a href="{{value.Uploadeng}}">clickhere</a>
 
                     <span class="focus-input100"></span>
                 </div>
@@ -95,19 +97,26 @@
       </select>
                         </div>
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" name="name" placeholder="Year Taken">
+                    <input class="input100" type="date" name="Testad" value="{{value.Testad}}" placeholder="Year Taken">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="name" placeholder="Overall Score">
+                    <input class="input100" type="text" name="Overallscoread" value="{{value.Overallscoread}}" placeholder="Overall Score">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                            <input type="file" class="form-control-file input100" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file input100" name="Uploadad"  id="Uploadad">
+                            <a href="{{value.Uploadad}}">clickhere</a>
 
                     <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn" href='/stdcour'>
+                        Prev
+                    </button>
                 </div>
 
 

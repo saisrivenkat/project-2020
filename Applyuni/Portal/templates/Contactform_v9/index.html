@@ -44,8 +44,12 @@ input[type=date]:focus::-webkit-datetime-edit {
 		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" action="/stdind" method="POST" >
+				
+				{% csrf_token %}
 				<div class="row">
+					
+						
 					<div class="col-lg-11 col-md-12">
 						<span class="contact100-form-title">
 							Personal Information
@@ -60,13 +64,13 @@ input[type=date]:focus::-webkit-datetime-edit {
 				<div class="row">
 					<div class="col-lg-6 col-md-12">
 						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="text" name="name" placeholder="first Name">
+					<input class="input100" type="text" value="{{value.Firstname}}" name="Firstname" placeholder="Firstname">
 					<span class="focus-input100"></span>
 				</div>
 					</div>
 					<div class="col-lg-6 col-md-12">
 						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="text" name="name" placeholder="first Name">
+					<input class="input100" type="text" value="{{value.Lastname}}" name="Lastname" placeholder="Lastname">
 					<span class="focus-input100"></span>
 				</div>
 					</div>
@@ -76,16 +80,16 @@ input[type=date]:focus::-webkit-datetime-edit {
 				<div class="row">
 					<div class="col-lg-6 col-md-12">
 						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="date" name="name" placeholder="date of birth">
+					<input class="input100" type="date" value="{{value.Dateofbirth}}" name="Dateofbirth" placeholder="date of birth">
 					<span class="focus-input100"></span>
 				</div>
 					</div>
 					<div class="col-lg-6 col-md-12">
 						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Gender">
         <option selected>Gender</option>
-        <option>Male</option>
+        <option selected >Male</option>
         <option>female</option>
       </select>
 							<div>
@@ -100,9 +104,9 @@ input[type=date]:focus::-webkit-datetime-edit {
 			<div class="row">
 					<div class="col-lg-6 col-md-12">
 						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;"name="Nationality">
         <option selected>Nationality</option>
-        <option>India</option>
+		<option >India</option>
         <option>USA</option>
       </select>
 							<div>
@@ -113,9 +117,9 @@ input[type=date]:focus::-webkit-datetime-edit {
 					<div class="col-lg-6 col-md-12">
 						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;"name="Maritial">
         <option selected>Martial Status</option>
-        <option>Single</option>
+		<option>Single</option>
         <option>Married</option>
       </select>
 							<div>
@@ -128,13 +132,13 @@ input[type=date]:focus::-webkit-datetime-edit {
 			<div class="row">
 					<div class="col-lg-6 col-md-12">
 						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="text" name="name" placeholder="Email">
+					<input class="input100" type="text" name="Email" placeholder="Email" value="{{value.Email}}">
 					<span class="focus-input100"></span>
 				</div>
 					</div>
 					<div class="col-lg-6 col-md-12">
 						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="text" name="name" placeholder="Phonenumber">
+					<input class="input100" type="text" name="Phonenumber" placeholder="Phonenumber" value="{{value.Phonenumber}}">
 					<span class="focus-input100"></span>
 				</div>
 					</div>
@@ -142,8 +146,8 @@ input[type=date]:focus::-webkit-datetime-edit {
 
 
 
-				<div class="wrap-input100 validate-input rs1-wrap-input100" ">
-					<input class="input100" type="text" name="name" placeholder="Adress">
+				<div class="wrap-input100 validate-input rs1-wrap-input100" >
+					<input class="input100" type="text" name="Address" placeholder="Adress" value="{{value.Address}}">
 					<span class="focus-input100"></span>
 				</div>
 
@@ -191,11 +195,26 @@ input[type=date]:focus::-webkit-datetime-edit {
 				<div class="col-lg-4 col-md-12">
 					<div class="container-contact100-form-btn">
 				
-						<button class="contact100-form-btn">
-							<a href="stdind" style="color: black;padding: 10px;">Next</a>
+						<button class="contact100-form-btn" type="submit" >
+							save
 						</button>
 			
 				</div>
+				
+
+
+
+				<div class="col-lg-4 col-md-12">
+					<div class="container-contact100-form-btn">
+				
+						<button class="contact100-form-btn">
+							<a href="stdind" style="color: black;padding: 10px;">Prev</a>
+						</button>
+			
+				</div>
+
+				</div>
+				
 
 				</div>
 				<div class="col-lg-4 col-md-12">

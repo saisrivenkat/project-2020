@@ -35,7 +35,8 @@
         <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
         <div class="wrap-contact100">
-            <form class="contact100-form validate-form">
+            <form class="contact100-form validate-form" action="/stdacd" method="POST" enctype="multipart/form-data"> 
+                {% csrf_token %}
                 <div class="col-lg-11 col-md-12">
                     <span class="contact100-form-title">
                        Academic Qualification
@@ -50,12 +51,12 @@
                    <h6>High School</h6>
                 </span>
 
-                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
+                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name" name="Sscqual">
 
       <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
         <option selected>Qualification</option>
-        <option>10</option>
-        <option>9</option>
+        <option>State</option>
+        <option>CBSE</option>
       </select>
                             <div>
                                 <span class="focus-input100"></span>
@@ -66,20 +67,20 @@
 
 
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="name" placeholder="Name of the School">
+                    <input class="input100" type="text" name="Sscname" placeholder="Name of the School" value="{{value.Sscname}}">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                          <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="name" placeholder="Marks Obtained">
+                    <input class="input100" type="text" name="Sscmarks" value="{{value.Sscmarks}}" placeholder="Marks Obtained">
                     <span class="focus-input100"></span>
                 </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" name="name" placeholder="Date of Completion">
+                    <input class="input100" type="date" name="Sscdate" value="{{value.Sscdate}}" placeholder="Date of Completion">
                     <span class="focus-input100"></span>
                 </div>
                     </div>
@@ -94,7 +95,7 @@
                     <div class="col-lg-6 col-md-12">
                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Sscgrading">
         <option selected>Grading Schema</option>
         <option>%</option>
         <option>marks</option>
@@ -106,7 +107,8 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                            <input type="file" class="form-control-file input100" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file input100" id="SscDoc" name="SscDoc">
+                            <a href="{{value.SscDoc}}">clickhere</a>
 
                     <span class="focus-input100"></span>
                 </div>
@@ -116,15 +118,15 @@
                 <hr>
 
                  <span class="contact100-form-title">
-                   <h6>High School</h6>
+                   <h6>Intermediate</h6>
                 </span>
 
                  <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Intqual">
         <option selected>Qualification</option>
-        <option>10</option>
-        <option>9</option>
+        <option>Maths</option>
+        <option>Science</option>
       </select>
                             <div>
                                 <span class="focus-input100"></span>
@@ -135,20 +137,20 @@
 
 
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="name" placeholder="Name of the School">
+                    <input class="input100" type="text" value="{{value.Intname}}" name="Intname" placeholder="Name of the School">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                          <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="name" placeholder="Marks Obtained">
+                    <input class="input100" type="text" value= "{{value.Intmarks}}" name="Intmarks" placeholder="Marks Obtained">
                     <span class="focus-input100"></span>
                 </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" name="name" placeholder="Date of Completion">
+                    <input class="input100" type="date" value="{{value.Intdate}}" name="Intdate" placeholder="Date of Completion">
                     <span class="focus-input100"></span>
                 </div>
                     </div>
@@ -163,7 +165,7 @@
                     <div class="col-lg-6 col-md-12">
                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Intgrading">
         <option selected>Grading Schema</option>
         <option>%</option>
         <option>marks</option>
@@ -175,7 +177,8 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                            <input type="file" class="form-control-file input100" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file input100" id="IntDoc" name="IntDoc">
+                            <a href="{{value.IntDoc}}">clickhere</a>
 
                     <span class="focus-input100"></span>
                 </div>
@@ -190,10 +193,10 @@
 
                  <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Uniqual">
         <option selected>Qualification</option>
-        <option>10</option>
-        <option>9</option>
+        <option>CSE</option>
+        <option>Ece</option>
       </select>
                             <div>
                                 <span class="focus-input100"></span>
@@ -204,20 +207,20 @@
 
 
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="name" placeholder="Name of the School">
+                    <input class="input100" type="text" name="Uniname" value="{{value.Uniname}}" placeholder="Name of the School">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                          <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="name" placeholder="Marks Obtained">
+                    <input class="input100" type="text" name="Unimarks" value="{{value.Unimarks}}" placeholder="Marks Obtained">
                     <span class="focus-input100"></span>
                 </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" name="name" placeholder="Date of Completion">
+                    <input class="input100" type="date" name="Unidate" value="{{value.Unidate}}" placeholder="Date of Completion">
                     <span class="focus-input100"></span>
                 </div>
                     </div>
@@ -232,7 +235,7 @@
                     <div class="col-lg-6 col-md-12">
                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px; " name="Unigrading">
         <option selected>Grading Schema</option>
         <option>%</option>
         <option>marks</option>
@@ -244,7 +247,8 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                            <input type="file" class="form-control-file input100" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file input100" id="UniDoc" name="UniDoc">
+                            <a href="{{value.UniDoc}}">clickhere</a>
 
                     <span class="focus-input100"></span>
                 </div>
@@ -258,6 +262,17 @@
                     
                             <button class="contact100-form-btn">
                                 <a href="stdind" style="color: black;padding: 10px;">Next</a>
+                            </button>
+                
+                    </div>
+    
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <div class="container-contact100-form-btn">
+                    
+                            <button class="contact100-form-btn">
+                                Save&Submit
                             </button>
                 
                     </div>

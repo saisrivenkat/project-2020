@@ -35,7 +35,8 @@
         <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
         <div class="wrap-contact100">
-            <form class="contact100-form validate-form">
+            <form class="contact100-form validate-form" action="/stdcour" method="POST">
+                {% csrf_token %}
                 <div class="col-lg-11 col-md-12">
                     <span class="contact100-form-title">
                         Course Information
@@ -47,7 +48,7 @@
                 </div>
                  <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Applyingfor">
         <option selected>Applying For </option>
         <option>Bachelors</option>
         <option>Ms</option>
@@ -57,7 +58,7 @@
                             </div>
                         </div>
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" name="name" placeholder="">
+                    <input class="input100" type="date" name="Date" placeholder="" value="{{value.Date}}"> 
                     <span class="focus-input100"></span>
                 </div>
 
@@ -67,7 +68,7 @@
                 <h6 class="p-3">Country of Interst</h6>
                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;"name="Pcoun1" value="{{value.Pcoun1}}">
         <option selected>Preferred Country 1</option>
         <option>Bachelors</option>
         <option>Ms</option>
@@ -78,8 +79,8 @@
                         </div>
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-        <option selected>Preferred Country 1</option>
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Pcoun2" value="{{value.Pcoun2}}">
+        <option selected>Preferred Country 2</option>
         <option>Bachelors</option>
         <option>Ms</option>
       </select>
@@ -89,8 +90,8 @@
                         </div>
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-        <option selected>Preferred Country 1</option>
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Pcoun3" value="{{value.Pcoun3}}">
+        <option selected>Preferred Country 3</option>
         <option>Bachelors</option>
         <option>Ms</option>
       </select>
@@ -103,7 +104,7 @@
                         <h6 class="p-3">Intersted area of study</h6>
                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Pcour4" value="{{value.Pcour4}}">
         <option selected>Course 1</option>
         <option>Bachelors</option>
         <option>Ms</option>
@@ -114,7 +115,7 @@
                         </div>
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Pcour5" value="{{value.Pcour5}}">
         <option selected>Course 2</option>
         <option>Bachelors</option>
         <option>Ms</option>
@@ -125,7 +126,7 @@
                         </div>
                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+      <select id="inputState" class="form-control input100" style="border:none;height: 62px;"name="Pcour6" value="{{value.Pcour6}}">
         <option selected>Course 3</option>
         <option>Bachelors</option>
         <option>Ms</option>
@@ -140,7 +141,18 @@
 					<div class="container-contact100-form-btn">
 				
 						<button class="contact100-form-btn">
-							<a href="stdacd" style="color: black;padding: 10px;">Next</a>
+							<a href="stdacd" style="color: black;padding: 10px;">Prev</a>
+						</button>
+			
+				</div>
+
+				</div>
+
+                <div class="col-lg-4 col-md-12">
+					<div class="container-contact100-form-btn">
+				
+						<button class="contact100-form-btn">
+							Save&Submit
 						</button>
 			
 				</div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -176,30 +177,31 @@ html {
 </head>
 
 <body class="stretched">
-
+	{% extends "Student_portal/navbar.html" %}
+    {% block content %}
 	<!-- Document Wrapper
-	============================================= -->
+	============================================= 
 	<div id="wrapper" class="clearfix">
 
-		<!-- Header
-		============================================= -->
+		 Header
+		============================================= 
 		<header id="header" class="full-header">
 			<div id="header-wrap">
 				<div class="container">
 					<div class="header-row">
 
-						<!-- Logo
-						============================================= -->
+						
+						============================================= 
 						<div id="logo">
 							<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
 							<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
-						</div><!-- #logo end -->
+						</div>#logo end -->
 
 
 
 
 						<!-- Primary Navigation
-						============================================= -->
+						============================================= 
 						<nav class="primary-menu">
 
 							<ul class="menu-container">
@@ -228,7 +230,7 @@ html {
 
 							</ul>
 
-						</nav><!-- #primary-menu end -->
+						</nav> #primary-menu end 
 
 						<form class="top-search-form" action="search.html" method="get">
 							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">
@@ -238,7 +240,7 @@ html {
 				</div>
 			</div>
 			<div class="header-wrap-clone"></div>
-		</header><!-- #header end -->
+		</header>#header end -->
 
 		<section id="page-title">
 
@@ -989,6 +991,6 @@ html {
 });
 
 </script>
-
+{% endblock %}
 </body>
 </html>
