@@ -1,235 +1,342 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Contact V9</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/icons/favicon.ico' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/animate/animate.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/animsition/css/animsition.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/daterangepicker/daterangepicker.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <!--===============================================================================================-->
+    <style type="text/css">
+      input[type="date"]:required:invalid::-webkit-datetime-edit {
+        color: transparent;
+      }
 
-<head>
-	<title>Contact V9</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-	<!--===============================================================================================-->
-	<style type="text/css">
-		input[type=date]:required:invalid::-webkit-datetime-edit {
-			color: transparent;
-		}
+      input[type="date"]:focus::-webkit-datetime-edit {
+        color: black !important;
+      }
+    </style>
+  </head>
 
-		input[type=date]:focus::-webkit-datetime-edit {
-			color: black !important;
-		}
-	</style>
-</head>
+  <body>
+    {% include 'Student_portal/Form_Nav.html' %}
+    <div class="container-contact100">
+      <div
+        class="contact100-map"
+        id="google_map"
+        data-map-x="40.722047"
+        data-map-y="-73.986422"
+        data-pin="images/icons/map-marker.png"
+        data-scrollwhell="0"
+        data-draggable="1"
+      ></div>
 
-<body>
+      <div class="wrap-contact100">
+        <form
+          class="contact100-form validate-form"
+          action="/stdind"
+          method="POST"
+        >
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-lg-11 col-md-12">
+              <span class="contact100-form-title"> Personal Information </span>
+            </div>
+            <div class="col-lg-1 col-md-12">
+              <span style="font-weight: 900">1/4</span>
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <input
+                  class="input100"
+                  type="text"
+                  value="{{value.Firstname}}"
+                  name="Firstname"
+                  placeholder="Firstname"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <input
+                  class="input100"
+                  type="text"
+                  value="{{value.Lastname}}"
+                  name="Lastname"
+                  placeholder="Lastname"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
 
-	<div class="container-contact100">
-		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422"
-			data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <input
+                  class="input100"
+                  type="date"
+                  value="{{value.Dateofbirth}}"
+                  name="Dateofbirth"
+                  placeholder="date of birth"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <select
+                  id="inputState"
+                  class="form-control input100"
+                  style="border: none; height: 62px"
+                  name="Gender"
+                >
+                  <option selected>Gender</option>
+                  <option selected>Male</option>
+                  <option>female</option>
+                </select>
+                <div>
+                  <span class="focus-input100"></span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="/stdind" method="POST">
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <select
+                  id="inputState"
+                  class="form-control input100"
+                  style="border: none; height: 62px"
+                  name="Nationality"
+                >
+                  <option selected>Nationality</option>
+                  <option>India</option>
+                  <option>USA</option>
+                </select>
+                <div>
+                  <span class="focus-input100"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <select
+                  id="inputState"
+                  class="form-control input100"
+                  style="border: none; height: 62px"
+                  name="Maritial"
+                >
+                  <option selected>Martial Status</option>
+                  <option>Single</option>
+                  <option>Married</option>
+                </select>
+                <div>
+                  <span class="focus-input100"></span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				{% csrf_token %}
-				<div class="row">
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <input
+                  class="input100"
+                  type="text"
+                  name="Email"
+                  placeholder="Email"
+                  value="{{value.Email}}"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <input
+                  class="input100"
+                  type="text"
+                  name="Phonenumber"
+                  placeholder="Phonenumber"
+                  value="{{value.Phonenumber}}"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
 
+          <div class="wrap-input100 validate-input rs1-wrap-input100">
+            <input
+              class="input100"
+              type="text"
+              name="Address"
+              placeholder="Adress"
+              value="{{value.Address}}"
+            />
+            <span class="focus-input100"></span>
+          </div>
 
-					<div class="col-lg-11 col-md-12">
-						<span class="contact100-form-title">
-							Personal Information
-						</span>
-					</div>
-					<div class="col-lg-1 col-md-12">
-						<span style="font-weight: 900;">1/4</span>
-					</div>
+          <div
+            class="wrap-input100 validate-input rs1-wrap-input100"
+            data-validate="Please enter your first name"
+          >
+            <select
+              id="inputState"
+              class="form-control input100"
+              style="border: none; height: 62px"
+            >
+              <option selected>Country</option>
+              <option>India</option>
+              <option>USA</option>
+            </select>
+            <div>
+              <span class="focus-input100"></span>
+            </div>
+          </div>
 
-				</div>
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <select
+                  id="inputState"
+                  class="form-control input100"
+                  style="border: none; height: 62px"
+                >
+                  <option selected>State</option>
+                  <option>India</option>
+                  <option>USA</option>
+                </select>
+                <div>
+                  <span class="focus-input100"></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your first name"
+              >
+                <select
+                  id="inputState"
+                  class="form-control input100"
+                  style="border: none; height: 62px"
+                >
+                  <option selected>City</option>
+                  <option>Single</option>
+                  <option>Married</option>
+                </select>
+                <div>
+                  <span class="focus-input100"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center">
+            <button class="contact100-form-btn" type="submit">save</button>
+          </div>
 
-				<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-							<input class="input100" type="text" value="{{value.Firstname}}" name="Firstname"
-								placeholder="Firstname">
-							<span class="focus-input100"></span>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-							<input class="input100" type="text" value="{{value.Lastname}}" name="Lastname"
-								placeholder="Lastname">
-							<span class="focus-input100"></span>
-						</div>
-					</div>
-				</div>
+          <div style="display: flex; justify-content: space-between">
+            <div class=""></div>
+            <div class="">
+              <a href="/stdacd"><i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
 
-
-				<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-							<input class="input100" type="date" value="{{value.Dateofbirth}}" name="Dateofbirth"
-								placeholder="date of birth">
-							<span class="focus-input100"></span>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-
-							<select id="inputState" class="form-control input100" style="border:none;height: 62px;"
-								name="Gender">
-								<option selected>Gender</option>
-								<option selected>Male</option>
-								<option>female</option>
-							</select>
-							<div>
-								<span class="focus-input100"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-
-				<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-							<select id="inputState" class="form-control input100" style="border:none;height: 62px;"
-								name="Nationality">
-								<option selected>Nationality</option>
-								<option>India</option>
-								<option>USA</option>
-							</select>
-							<div>
-								<span class="focus-input100"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-
-							<select id="inputState" class="form-control input100" style="border:none;height: 62px;"
-								name="Maritial">
-								<option selected>Martial Status</option>
-								<option>Single</option>
-								<option>Married</option>
-							</select>
-							<div>
-								<span class="focus-input100"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-							<input class="input100" type="text" name="Email" placeholder="Email"
-								value="{{value.Email}}">
-							<span class="focus-input100"></span>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-							<input class="input100" type="text" name="Phonenumber" placeholder="Phonenumber"
-								value="{{value.Phonenumber}}">
-							<span class="focus-input100"></span>
-						</div>
-					</div>
-				</div>
-
-
-
-				<div class="wrap-input100 validate-input rs1-wrap-input100">
-					<input class="input100" type="text" name="Address" placeholder="Adress" value="{{value.Address}}">
-					<span class="focus-input100"></span>
-				</div>
-
-
-				<div class="wrap-input100 validate-input rs1-wrap-input100"
-					data-validate="Please enter your first name">
-					<select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-						<option selected>Country</option>
-						<option>India</option>
-						<option>USA</option>
-					</select>
-					<div>
-						<span class="focus-input100"></span>
-					</div>
-				</div>
-
-
-				<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-							<select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-								<option selected>State</option>
-								<option>India</option>
-								<option>USA</option>
-							</select>
-							<div>
-								<span class="focus-input100"></span>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100"
-							data-validate="Please enter your first name">
-
-							<select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-								<option selected>City</option>
-								<option>Single</option>
-								<option>Married</option>
-							</select>
-							<div>
-								<span class="focus-input100"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="text-center">
-					<button class="contact100-form-btn" type="submit">
-						save
-					</button>
-				</div>
-				<div class="row">
-					<div class="col-3">
-						<h1>saii</h1>
-					</div>
-					<div class="col-6">
-
-					</div>
-					<div class="col-3">
-						<h1>saii</h1>
-					</div>
-				</div>
-				<!--
+          <!--
 				<div class="row">
 					<div class="col-lg-4 col-md-12">
 						<div class="container-contact100-form-btn">
@@ -267,45 +374,197 @@
 
 				</div>
 				-->
+        </form>
+      </div>
+    </div>
+	 <!-- Footer
+        ============================================= -->
+        <footer id="footer" class="dark">
+            <div class="container">
 
-			</form>
-		</div>
-	</div>
+                <!-- Footer Widgets
+                ============================================= -->
+                <div class="footer-widgets-wrap">
+
+                    <div class="row col-mb-50">
+                        <div class="col-lg-8">
+
+                            <div class="row col-mb-50">
+                                <div class="col-md-10">
+
+                                    <div class="widget clearfix">
+
+                                        <h1>ApplyUni</h1>
+
+                                        <p></p>
+
+                                        <div class="row" >
+                                            <div class="col-lg-6 col-md-12">
+                                                <address>
+                                                    <strong>Headquarters:</strong><br>
+                                                   Street<br>
+                                                   Malaysia<br>
+                                                </address>
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+                                                <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>
+                                            <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
+                                            <abbr title="Email Address"><strong>Email:</strong></abbr> info@Applyuni.com
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                            <div class="row col-mb-50">
+                                <div class="col-md-4 col-lg-12">
+                                    <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                                        <div class="row">
+                                          <!--                                            <div class="col-lg-6 bottommargin-sm">
+                                                <div class="counter counter-small"><span data-from="0" data-to="0" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+                                                <h5 class="mb-0">Total Registers</h5>
+                                            </div>
+                                            -->
 
 
 
-	<div id="dropDownSelect1"></div>
+                                        </div>
 
-	<!--===============================================================================================-->
-	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
-	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
-	<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
-	<!--===============================================================================================-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-	<script src="{% static 'js/map-custom.js' %}"></script>
-	<!--===============================================================================================-->
-	<script src="{% static 'js/main.js' %}"></script>
+                                    </div>
+                                </div>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
 
-		gtag('config', 'UA-23581568-13');
-	</script>
 
-</body>
+                               <div>
+                                  <h3>Follow Us on</h3s>
+                                  <div class="d-flex justify-content-center justify-content-md-end">
 
+                <a href="#" class="social-icon si-small si-borderless si-facebook">
+                  <i class="icon-facebook"></i>
+                  <i class="icon-facebook"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-twitter">
+                  <i class="icon-twitter"></i>
+                  <i class="icon-twitter"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-gplus">
+                  <i class="icon-gplus"></i>
+                  <i class="icon-gplus"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-pinterest">
+                  <i class="icon-pinterest"></i>
+                  <i class="icon-pinterest"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-vimeo">
+                  <i class="icon-vimeo"></i>
+                  <i class="icon-vimeo"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-github">
+                  <i class="icon-github"></i>
+                  <i class="icon-github"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-yahoo">
+                  <i class="icon-yahoo"></i>
+                  <i class="icon-yahoo"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-linkedin">
+                  <i class="icon-linkedin"></i>
+                  <i class="icon-linkedin"></i>
+                </a>
+              </div>
+
+                               </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- .footer-widgets-wrap end -->
+
+            </div>
+
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights">
+                <div class="container">
+
+                    <div class="row col-mb-30">
+
+                        <div class="col-md-6 text-center text-md-left">
+                            Copyrights &copy; 2020 All Rights Reserved by Applyuni.<br>
+                            <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                        </div>
+
+                        <div class="col-md-6 text-center text-md-right">
+
+
+                            <div class="clear"></div>
+
+                            <i class="fas fa-envelop"></i> info@applyuni.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div><!-- #copyrights end -->
+        </footer><!-- #footer end -->
+
+
+    <div id="dropDownSelect1"></div>
+
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="{% static 'js/map-custom.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-23581568-13");
+    </script>
+  </body>
 </html>
