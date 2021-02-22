@@ -11,6 +11,7 @@
       type="image/png"
       href="{% static 'images/icons/favicon.ico' %}"
     />
+    
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
@@ -23,6 +24,7 @@
       type="text/css"
       href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
     />
+    <script type="text/javascript" src="{% static 'js/Date.js' %}"></script>
     <!--===============================================================================================-->
     <link
       rel="stylesheet"
@@ -77,6 +79,7 @@
       input[type="date"]:focus::-webkit-datetime-edit {
         color: black !important;
       }
+      
     </style>
   </head>
 
@@ -460,19 +463,15 @@
             class="wrap-input100 validate-input rs1-wrap-input100"
             data-validate="Please enter your Address"
           >
-            <select
-              id="inputState"
-              class="form-control input100"
-              style="border: none; height: 62px"
-            >
-              <option selected>Country</option>
-              <option>India</option>
-              <option>USA</option>
-            </select>
+          <select 
+          style="padding: 20px;width: 100%;border: none;"
+         
+          onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select>
             <div>
               <span class="focus-input100"></span>
             </div>
           </div>
+         
 
           <div class="row">
             <div class="col-lg-6 col-md-12">
@@ -480,34 +479,30 @@
                 class="wrap-input100 validate-input rs1-wrap-input100"
                 data-validate="Please enter your Country"
               >
-                <select
-                  id="inputState"
-                  class="form-control input100"
-                  style="border: none; height: 62px"
-                >
-                  <option selected>State</option>
-                  <option>India</option>
-                  <option>USA</option>
-                </select>
+              
+              <select
+              style="padding: 20px;width: 100%;border: none;"
+               name ="state" id ="state"></select>
                 <div>
                   <span class="focus-input100"></span>
                 </div>
               </div>
             </div>
+            <script language="javascript">print_country("country");</script>
             <div class="col-lg-6 col-md-12">
               <div
                 class="wrap-input100 validate-input rs1-wrap-input100"
                 data-validate="Please enter your State"
               >
-                <select
-                  id="inputState"
-                  class="form-control input100"
-                  style="border: none; height: 62px"
-                >
-                  <option selected>City</option>
-                  <option>Single</option>
-                  <option>Married</option>
-                </select>
+              <input
+              class="input100"
+              type="text"
+              name="Address"
+              placeholder="City"
+              
+              value="{{value.Address}}"
+            />
+               
                 <div>
                   <span class="focus-input100"></span>
                 </div>
