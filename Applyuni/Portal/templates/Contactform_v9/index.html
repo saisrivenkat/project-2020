@@ -1,240 +1,273 @@
 {% load static %}
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Contact V9</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<!--===============================================================================================-->
-<style type="text/css">
-	input[type=date]:required:invalid::-webkit-datetime-edit {
-    color: transparent;
-}
-input[type=date]:focus::-webkit-datetime-edit {
-    color: black !important;
-}
-</style>
+	<!--===============================================================================================-->
+	<style type="text/css">
+		input[type=date]:required:invalid::-webkit-datetime-edit {
+			color: transparent;
+		}
+
+		input[type=date]:focus::-webkit-datetime-edit {
+			color: black !important;
+		}
+	</style>
 </head>
 
 <body>
 
 
 	<div class="container-contact100">
-		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422"
+			data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
 		<div class="wrap-contact100">
-			<form class="contact100-form validate-form" action="/stdind" method="POST" >
-				
+			<form class="contact100-form validate-form" action="/stdind" method="POST">
+
 				{% csrf_token %}
 				<div class="row">
-					
-						
+
+
 					<div class="col-lg-11 col-md-12">
 						<span class="contact100-form-title">
 							Personal Information
 						</span>
 					</div>
 					<div class="col-lg-1 col-md-12">
-						<span style="font-weight: 900;" >1/4</span>
+						<span style="font-weight: 900;">1/4</span>
 					</div>
 
 				</div>
-				
-				<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="text" value="{{value.Firstname}}" name="Firstname" placeholder="Firstname">
-					<span class="focus-input100"></span>
-				</div>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="text" value="{{value.Lastname}}" name="Lastname" placeholder="Lastname">
-					<span class="focus-input100"></span>
-				</div>
-					</div>
-				</div>
-
 
 				<div class="row">
 					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="date" value="{{value.Dateofbirth}}" name="Dateofbirth" placeholder="date of birth">
-					<span class="focus-input100"></span>
-				</div>
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
+							<input class="input100" type="text" value="{{value.Firstname}}" name="Firstname"
+								placeholder="Firstname">
+							<span class="focus-input100"></span>
+						</div>
 					</div>
 					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
+							<input class="input100" type="text" value="{{value.Lastname}}" name="Lastname"
+								placeholder="Lastname">
+							<span class="focus-input100"></span>
+						</div>
+					</div>
+				</div>
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Gender">
-        <option selected>Gender</option>
-        <option selected >Male</option>
-        <option>female</option>
-      </select>
+
+				<div class="row">
+					<div class="col-lg-6 col-md-12">
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
+							<input class="input100" type="date" value="{{value.Dateofbirth}}" name="Dateofbirth"
+								placeholder="date of birth">
+							<span class="focus-input100"></span>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-12">
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
+
+							<select id="inputState" class="form-control input100" style="border:none;height: 62px;"
+								name="Gender">
+								<option selected>Gender</option>
+								<option selected>Male</option>
+								<option>female</option>
+							</select>
 							<div>
 								<span class="focus-input100"></span>
 							</div>
 						</div>
+					</div>
 				</div>
-			</div>
 
 
 
-			<div class="row">
+				<div class="row">
 					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;"name="Nationality">
-        <option selected>Nationality</option>
-		<option >India</option>
-        <option>USA</option>
-      </select>
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
+							<select id="inputState" class="form-control input100" style="border:none;height: 62px;"
+								name="Nationality">
+								<option selected>Nationality</option>
+								<option>India</option>
+								<option>USA</option>
+							</select>
 							<div>
 								<span class="focus-input100"></span>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;"name="Maritial">
-        <option selected>Martial Status</option>
-		<option>Single</option>
-        <option>Married</option>
-      </select>
+							<select id="inputState" class="form-control input100" style="border:none;height: 62px;"
+								name="Maritial">
+								<option selected>Martial Status</option>
+								<option>Single</option>
+								<option>Married</option>
+							</select>
 							<div>
 								<span class="focus-input100"></span>
 							</div>
 						</div>
-				</div>
-			</div>
-
-			<div class="row">
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="text" name="Email" placeholder="Email" value="{{value.Email}}">
-					<span class="focus-input100"></span>
-				</div>
-					</div>
-					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-					<input class="input100" type="text" name="Phonenumber" placeholder="Phonenumber" value="{{value.Phonenumber}}">
-					<span class="focus-input100"></span>
-				</div>
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="col-lg-6 col-md-12">
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
+							<input class="input100" type="text" name="Email" placeholder="Email"
+								value="{{value.Email}}">
+							<span class="focus-input100"></span>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-12">
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
+							<input class="input100" type="text" name="Phonenumber" placeholder="Phonenumber"
+								value="{{value.Phonenumber}}">
+							<span class="focus-input100"></span>
+						</div>
+					</div>
+				</div>
 
 
-				<div class="wrap-input100 validate-input rs1-wrap-input100" >
+
+				<div class="wrap-input100 validate-input rs1-wrap-input100">
 					<input class="input100" type="text" name="Address" placeholder="Adress" value="{{value.Address}}">
 					<span class="focus-input100"></span>
 				</div>
 
 
-				<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-        <option selected>Country</option>
-        <option>India</option>
-        <option>USA</option>
-      </select>
-							<div>
-								<span class="focus-input100"></span>
-							</div>
-						</div>
+				<div class="wrap-input100 validate-input rs1-wrap-input100"
+					data-validate="Please enter your first name">
+					<select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+						<option selected>Country</option>
+						<option>India</option>
+						<option>USA</option>
+					</select>
+					<div>
+						<span class="focus-input100"></span>
+					</div>
+				</div>
 
 
 				<div class="row">
 					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-        <option selected>State</option>
-        <option>India</option>
-        <option>USA</option>
-      </select>
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
+							<select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+								<option selected>State</option>
+								<option>India</option>
+								<option>USA</option>
+							</select>
 							<div>
 								<span class="focus-input100"></span>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-12">
-						<div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
+						<div class="wrap-input100 validate-input rs1-wrap-input100"
+							data-validate="Please enter your first name">
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-        <option selected>City</option>
-        <option>Single</option>
-        <option>Married</option>
-      </select>
+							<select id="inputState" class="form-control input100" style="border:none;height: 62px;">
+								<option selected>City</option>
+								<option>Single</option>
+								<option>Married</option>
+							</select>
 							<div>
 								<span class="focus-input100"></span>
 							</div>
 						</div>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4 col-md-12">
-					<div class="container-contact100-form-btn">
-				
-						<button class="contact100-form-btn" type="submit" >
-							save
-						</button>
-			
+				<div class="text-center">
+					<button class="contact100-form-btn" type="submit">
+						save
+					</button>
 				</div>
-				
+				<div class="row">
+					<div class="col-3">
+						<h1>saii</h1>
+					</div>
+					<div class="col-6">
 
-
-
-				<div class="col-lg-4 col-md-12">
-					<div class="container-contact100-form-btn">
-				
-						<button class="contact100-form-btn">
-							<a href="stdind" style="color: black;padding: 10px;">Prev</a>
-						</button>
-			
+					</div>
+					<div class="col-3">
+						<h1>saii</h1>
+					</div>
 				</div>
+				<!--
+				<div class="row">
+					<div class="col-lg-4 col-md-12">
+						<div class="container-contact100-form-btn">
+
+							<button class="contact100-form-btn" type="submit">
+								save
+							</button>
+
+						</div>
+						<div class="col-lg-4 col-md-12">
+							<div class="container-contact100-form-btn">
+
+
+							</div>
+
+						</div>
+
+
+					</div>
+					<div class="col-lg-4 col-md-12">
+
+
+					</div>
+					<div class="col-lg-4 col-md-12">
+						<div class="container-contact100-form-btn">
+
+							<button class="contact100-form-btn">
+								<a href="stdacd" style="color: black;padding: 10px;">Next</a>
+							</button>
+
+						</div>
+
+
+					</div>
 
 				</div>
-				
+				-->
 
-				</div>
-				<div class="col-lg-4 col-md-12">
-
-
-				</div>
-				<div class="col-lg-4 col-md-12">
-					<div class="container-contact100-form-btn">
-				
-						<button class="contact100-form-btn">
-							<a href="stdacd" style="color: black;padding: 10px;">Next</a>
-						</button>
-			
-				</div>
-					
-
-				</div>
-
-			</div>
-			
 			</form>
 		</div>
 	</div>
@@ -243,35 +276,36 @@ input[type=date]:focus::-webkit-datetime-edit {
 
 	<div id="dropDownSelect1"></div>
 
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
 	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="{% static 'vendor/select2/select2.min.js' %}"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
 	<script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
 	<script src="{% static 'js/map-custom.js' %}"></script>
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
 	<script src="{% static 'js/main.js' %}"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-  gtag('config', 'UA-23581568-13');
-</script>
+		gtag('config', 'UA-23581568-13');
+	</script>
 
 </body>
+
 </html>
