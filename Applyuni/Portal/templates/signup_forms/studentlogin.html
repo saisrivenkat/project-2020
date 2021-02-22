@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %} {% load socialaccount %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -209,11 +209,12 @@ label{
                     </div>
                    
                     <div class="icons" style="color: rgb(243, 243, 250);">
-                        <a href="#"><img src="https://img.icons8.com/bubbles/50/000000/google-logo.png"/></a>
-                        <a href="#"><img src="https://img.icons8.com/doodle/48/000000/facebook-new.png"/></a>
-                        <a href="#"><img src="https://img.icons8.com/doodle/48/000000/linkedin--v2.png"/></a>
+                        <a href="{% provider_login_url 'google' %}"><img src="https://img.icons8.com/bubbles/50/000000/google-logo.png"/></a>
+                        <a href="{% url 'social:begin' 'facebook' %}"><img src="https://img.icons8.com/doodle/48/000000/facebook-new.png"/></a>
+                        <a href="{% url 'social:begin' 'linkedin-oauth2' %}"><img src="https://img.icons8.com/doodle/48/000000/linkedin--v2.png"/></a>
                     </div><br>
                     <div class="group">
+                        
                         <input type="submit" class="button"  value="Apply Uni Sign In">
                     </div>
                     <div class="hr"></div>
