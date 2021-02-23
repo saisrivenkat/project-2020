@@ -43,10 +43,16 @@ class stdind(View):
             error_message="ohh your email doesn't matched with login mail"
             return render(request,'Contactform_v9/index.html',{error:error_message})
         else:
+            student=Student.get_student_by_email(Email)
+            stdind1=Stdind.get_stdind_by_email(student.Email)
+            if(City==None or Country == None):
+                City=Stdind1.City
+                Country=Stdind1.Country
             stdind=Stdind(Firstname= Firstname,Lastname= Lastname,Dateofbirth=Dateofbirth,Gender=Gender,
             Maritial=Maritial,Nationality=Nationality,Email = Email,Address=Address,City=City,State=State,
             Country=Country,Phonenumber= Phonenumber)
-
+            if(stdind1):
+                stdind1.delete()
             stdind.register()
             value={'Firstname': Firstname,'Lastname': Lastname,'Dateofbirth':Dateofbirth,'Gender':Gender,
             'Maritial':Maritial,'Nationality':Nationality,'Email' : Email,'Address':Address,'City':City,'State':State,
@@ -71,6 +77,8 @@ class stdacd(View):
         print("in post man in stddetail")
         Email=request.session['Email']
         Sscqual=request.POST.get('Sscqual')
+        print("123456")
+        print(Sscqual)
         Sscname=request.POST.get('Sscname')
         Sscdate=request.POST.get('Sscdate')
         Sscmarks=request.POST.get('Sscmarks')
@@ -105,6 +113,11 @@ class stdacd(View):
             Intdate=Intdate,
             Intmarks=Intmarks,Intgrading=Intgrading,IntDoc=IntDoc,Uniqual=Uniqual,Uniname=Uniname,Unicname=Unicname
             ,Unidate=Unidate,Unimarks=Unimarks,Unigrading=Unigrading,UniDoc=UniDoc)
+
+        student=Student.get_student_by_email(Email)
+        stdacd1=Stdacd.get_stdacd_by_email(student.Email)
+        if(stdacd1):
+            stdacd1.delete()
         stdacd.register()
         value={'Sscqual':Sscqual,'Sscname':Sscname,'Sscdate':Sscdate,'Sscmarks':Sscmarks,'Sscgrading':Sscgrading,'SscDoc':url,
             'Intqual':Intqual,'Intname':Intname,'Intdate':Intdate,'Intmarks':Intmarks,'Intgrading':Intgrading,
@@ -135,6 +148,10 @@ class stdcour(View):
 
         stdcour=Stdcour(Applyingfor=Applyingfor,Date=Date,pcoun1=pcoun1,pcoun2=pcoun2,
         pcoun3=pcoun3,pcour4=pcour4,pcour5=pcour5,pcour6=pcour6,Email=Email)
+        student=Student.get_student_by_email(Email)
+        stdcour1=Stdcour.get_stdcour_by_email(student.Email)
+        if(stdcour1):
+            stdcour1.delete()
         stdcour.register()
         value={'Applyingfor':Applyingfor,'Date':Date,'pcoun1':pcoun1,'pcoun2':pcoun2,'pcoun3':pcoun3,'pcour4':pcour4,'pcour5':pcour5,'pcour6':pcour6}
         data={'value':value}

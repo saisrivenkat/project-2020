@@ -195,6 +195,9 @@
                   style="border: none; height: 62px"
                   name="Nationality"
                 >
+                {% if value.Nationality %}
+                <option selected value="{{value.Nationality}}">{{value.Nationality}}</option>
+                 {% endif %}
                 <option value="afghan">Nationality</option>
                 <option value="afghan">Afghan</option>
                 <option value="albanian">Albanian</option>
@@ -464,9 +467,14 @@
             data-validate="Please enter your Address"
           >
           <select 
+          
           style="padding: 20px;width: 100%;border: none;"
          
-          onchange="print_state('state',this.selectedIndex);" id="country" name ="country"></select>
+          onchange="print_state('state',this.selectedIndex);" id="country" name ="country">
+
+          
+        </select>
+        
             <div>
               <span class="focus-input100"></span>
             </div>
@@ -477,7 +485,8 @@
             <div class="col-lg-6 col-md-12">
               <div
                 class="wrap-input100 validate-input rs1-wrap-input100"
-                data-validate="Please enter your Country"
+                
+                data-validate="Please enter your Country" name="Country"
               >
               
               <select
@@ -492,15 +501,15 @@
             <div class="col-lg-6 col-md-12">
               <div
                 class="wrap-input100 validate-input rs1-wrap-input100"
-                data-validate="Please enter your State"
+                data-validate="Please enter your State" name="State"
               >
               <input
               class="input100"
               type="text"
-              name="Address"
+              name="City"
               placeholder="City"
               
-              value="{{value.Address}}"
+              value="{{value.City}}"
             />
                
                 <div>

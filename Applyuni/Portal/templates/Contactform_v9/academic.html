@@ -109,14 +109,18 @@
           <div
             class="wrap-input100 validate-input rs1-wrap-input100"
             data-validate="Please enter your Qualification"
-            name="Sscqual"
           >
             <select
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
+              name="Sscqual"
             >
-              <option selected>Qualification</option>
+            {% if value.Sscqual %}
+            <option selected>{{value.Sscqual}}</option>
+            {% else %}
+            <option selected>Qualification</option>
+            {% endif %}
               <option>State</option>
               <option>CBSE</option>
             </select>
@@ -227,7 +231,11 @@
               style="border: none; height: 62px"
               name="Intqual"
             >
+            {% if value.Intqual %}
+            <option selected>{{value.Intqual}}</option>
+            {% else %}
               <option selected>Qualification</option>
+              {% endif %}
               <option>Maths</option>
               <option>Science</option>
             </select>
@@ -338,7 +346,11 @@
               style="border: none; height: 62px"
               name="Uniqual"
             >
+            {% if value.Uniqual %}
+            <option selected>{{value.Uniqual}}</option>
+            {% else %}
               <option selected>Qualification</option>
+              {% endif %}
               <option>CSE</option>
               <option>Ece</option>
             </select>
@@ -353,7 +365,7 @@
           >
             <input
               class="input100"
-              type="number"
+              type="text"
               name="Uniname"
               value="{{value.Uniname}}"
               placeholder="Name of the School"
