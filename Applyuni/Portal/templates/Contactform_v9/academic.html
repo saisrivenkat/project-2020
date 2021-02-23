@@ -1,337 +1,643 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Contact V9</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}"/>
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<!--===============================================================================================-->
-</head>
-<body>
-
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/icons/favicon.ico' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/animate/animate.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/animsition/css/animsition.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'vendor/daterangepicker/daterangepicker.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    {% include 'Student_portal/Form_Nav.html' %}
     <div class="container-contact100">
-        <div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
+      <div
+        class="contact100-map"
+        id="google_map"
+        data-map-x="40.722047"
+        data-map-y="-73.986422"
+        data-pin="images/icons/map-marker.png"
+        data-scrollwhell="0"
+        data-draggable="1"
+      ></div>
 
-        <div class="wrap-contact100">
-            <form class="contact100-form validate-form" action="/stdacd" method="POST" enctype="multipart/form-data"> 
-                {% csrf_token %}
-                <div class="col-lg-11 col-md-12">
-                    <span class="contact100-form-title">
-                       Academic Qualification
-                    </span>
+      <div class="wrap-contact100">
+        <form
+          class="contact100-form validate-form"
+          action="/stdacd"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-lg-10 col-md-12">
+              <span class="contact100-form-title">
+                Academic Qualification
+              </span>
+            </div>
+            <div class="col-lg-1 col-md-12">
+              <span style="font-weight: 900">2/4</span>
+            </div>
+          </div>
+
+          <span class="contact100-form-title">
+            <h6>High School</h6>
+          </span>
+
+          <div
+            class="wrap-input100 validate-input rs1-wrap-input100"
+            data-validate="Please enter your Qualification"
+            name="Sscqual"
+          >
+            <select
+              id="inputState"
+              class="form-control input100"
+              style="border: none; height: 62px"
+            >
+              <option selected>Qualification</option>
+              <option>State</option>
+              <option>CBSE</option>
+            </select>
+            <div>
+              <span class="focus-input100"></span>
+            </div>
+          </div>
+
+          <div
+            class="wrap-input100 validate-input rs1-wrap-input100"
+            data-validate="Please enter your School Name"
+          >
+            <input
+              class="input100"
+              type="text"
+              name="Sscname"
+              placeholder="Name of the School"
+              value="{{value.Sscname}}"
+            />
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter Marks Obtained"
+              >
+                <input
+                  class="input100"
+                  type="number"
+                  name="Sscmarks"
+                  value="{{value.Sscmarks}}"
+                  placeholder="Marks Obtained"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter Date of Completion"
+              >
+                <input
+                  class="input100"
+                  type="date"
+                  name="Sscdate"
+                  value="{{value.Sscdate}}"
+                  placeholder="Date of Completion"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter Grading Schema"
+              >
+                <select
+                  id="inputState"
+                  class="form-control input100"
+                  style="border: none; height: 62px"
+                  name="Sscgrading"
+                >
+                  <option selected>Grading Schema</option>
+                  <option>%</option>
+                  <option>marks</option>
+                </select>
+                <div>
+                  <span class="focus-input100"></span>
                 </div>
-                <div class="col-lg-1 col-md-12">
-                    <span style="font-weight: 900;" >2/4</span>
-                    
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate=""
+              >
+                <input
+                  type="file"
+                  class="form-control-file input100"
+                  id="SscDoc"
+                  name="SscDoc"
+                />
+                <a href="{{value.SscDoc}}">clickhere</a>
+
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <span class="contact100-form-title">
+            <h6>Intermediate</h6>
+          </span>
+
+          <div
+            class="wrap-input100 validate-input rs1-wrap-input100"
+            data-validate="Please enter your Qualification"
+          >
+            <select
+              id="inputState"
+              class="form-control input100"
+              style="border: none; height: 62px"
+              name="Intqual"
+            >
+              <option selected>Qualification</option>
+              <option>Maths</option>
+              <option>Science</option>
+            </select>
+            <div>
+              <span class="focus-input100"></span>
+            </div>
+          </div>
+
+          <div
+            class="wrap-input100 validate-input rs1-wrap-input100"
+            data-validate="Please enter your School Name"
+          >
+            <input
+              class="input100"
+              type="text"
+              value="{{value.Intname}}"
+              name="Intname"
+              placeholder="Name of the School"
+            />
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your Marks Obatined"
+              >
+                <input
+                  class="input100"
+                  type="number"
+                  value="{{value.Intmarks}}"
+                  name="Intmarks"
+                  placeholder="Marks Obtained"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter Date of Completion"
+              >
+                <input
+                  class="input100"
+                  type="date"
+                  value="{{value.Intdate}}"
+                  name="Intdate"
+                  placeholder="Date of Completion"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your Grading Schema"
+              >
+                <select
+                  id="inputState"
+                  class="form-control input100"
+                  style="border: none; height: 62px"
+                  name="Intgrading"
+                >
+                  <option selected>Grading Schema</option>
+                  <option>%</option>
+                  <option>marks</option>
+                </select>
+                <div>
+                  <span class="focus-input100"></span>
                 </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please uplode the Doc"
+              >
+                <input
+                  type="file"
+                  class="form-control-file input100"
+                  id="IntDoc"
+                  name="IntDoc"
+                />
+                <a href="{{value.IntDoc}}">clickhere</a>
 
-                <span class="contact100-form-title">
-                   <h6>High School</h6>
-                </span>
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
 
-                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name" name="Sscqual">
+          <hr />
 
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;">
-        <option selected>Qualification</option>
-        <option>State</option>
-        <option>CBSE</option>
-      </select>
-                            <div>
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
+          <span class="contact100-form-title">
+            <h6>University</h6>
+          </span>
 
+          <div
+            class="wrap-input100 validate-input rs1-wrap-input100"
+            data-validate="Please enter your Qualification"
+          >
+            <select
+              id="inputState"
+              class="form-control input100"
+              style="border: none; height: 62px"
+              name="Uniqual"
+            >
+              <option selected>Qualification</option>
+              <option>CSE</option>
+              <option>Ece</option>
+            </select>
+            <div>
+              <span class="focus-input100"></span>
+            </div>
+          </div>
 
+          <div
+            class="wrap-input100 validate-input rs1-wrap-input100"
+            data-validate="Please enter Name Of School"
+          >
+            <input
+              class="input100"
+              type="number"
+              name="Uniname"
+              value="{{value.Uniname}}"
+              placeholder="Name of the School"
+            />
+            <span class="focus-input100"></span>
+          </div>
 
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter Marks Obtained"
+              >
+                <input
+                  class="input100"
+                  type="number"
+                  name="Unimarks"
+                  value="{{value.Unimarks}}"
+                  placeholder="Marks Obtained"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter Date of Completion"
+              >
+                <input
+                  class="input100"
+                  type="date"
+                  name="Unidate"
+                  value="{{value.Unidate}}"
+                  placeholder="Date of Completion"
+                />
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
 
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="Sscname" placeholder="Name of the School" value="{{value.Sscname}}">
-                    <span class="focus-input100"></span>
+          <div class="row">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please enter your Schema"
+              >
+                <select
+                  id="inputState"
+                  class="form-control input100"
+                  style="border: none; height: 62px"
+                  name="Unigrading"
+                >
+                  <option selected>Grading Schema</option>
+                  <option>%</option>
+                  <option>marks</option>
+                </select>
+                <div>
+                  <span class="focus-input100"></span>
                 </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="wrap-input100 validate-input rs1-wrap-input100"
+                data-validate="Please Uplode the Doc"
+              >
+                <input
+                  type="file"
+                  class="form-control-file input100"
+                  id="UniDoc"
+                  name="UniDoc"
+                />
+                <a href="{{value.UniDoc}}">clickhere</a>
 
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="Sscmarks" value="{{value.Sscmarks}}" placeholder="Marks Obtained">
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" name="Sscdate" value="{{value.Sscdate}}" placeholder="Date of Completion">
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
+                <span class="focus-input100"></span>
+              </div>
+            </div>
+          </div>
 
-                </div>
+          <div style="display: flex; justify-content: center">
+            <button class="contact100-form-btn" type="submit">save</button>
+          </div>
 
-
-
-
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                       <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Sscgrading">
-        <option selected>Grading Schema</option>
-        <option>%</option>
-        <option>marks</option>
-      </select>
-                            <div>
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                            <input type="file" class="form-control-file input100" id="SscDoc" name="SscDoc">
-                            <a href="{{value.SscDoc}}">clickhere</a>
-
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                 <span class="contact100-form-title">
-                   <h6>Intermediate</h6>
-                </span>
-
-                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Intqual">
-        <option selected>Qualification</option>
-        <option>Maths</option>
-        <option>Science</option>
-      </select>
-                            <div>
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" value="{{value.Intname}}" name="Intname" placeholder="Name of the School">
-                    <span class="focus-input100"></span>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" value= "{{value.Intmarks}}" name="Intmarks" placeholder="Marks Obtained">
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" value="{{value.Intdate}}" name="Intdate" placeholder="Date of Completion">
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
-
-                </div>
-
-
-
-
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                       <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Intgrading">
-        <option selected>Grading Schema</option>
-        <option>%</option>
-        <option>marks</option>
-      </select>
-                            <div>
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                            <input type="file" class="form-control-file input100" id="IntDoc" name="IntDoc">
-                            <a href="{{value.IntDoc}}">clickhere</a>
-
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                 <span class="contact100-form-title">
-                   <h6>University</h6>
-                </span>
-
-                 <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px;" name="Uniqual">
-        <option selected>Qualification</option>
-        <option>CSE</option>
-        <option>Ece</option>
-      </select>
-                            <div>
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="Uniname" value="{{value.Uniname}}" placeholder="Name of the School">
-                    <span class="focus-input100"></span>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                         <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="text" name="Unimarks" value="{{value.Unimarks}}" placeholder="Marks Obtained">
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                    <input class="input100" type="date" name="Unidate" value="{{value.Unidate}}" placeholder="Date of Completion">
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
-
-                </div>
-
-
-
-
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-12">
-                       <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-
-      <select id="inputState" class="form-control input100" style="border:none;height: 62px; " name="Unigrading">
-        <option selected>Grading Schema</option>
-        <option>%</option>
-        <option>marks</option>
-      </select>
-                            <div>
-                                <span class="focus-input100"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name">
-                            <input type="file" class="form-control-file input100" id="UniDoc" name="UniDoc">
-                            <a href="{{value.UniDoc}}">clickhere</a>
-
-                    <span class="focus-input100"></span>
-                </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="container-contact100-form-btn">
-                    
-                            <button class="contact100-form-btn">
-                                <a href="stdind" style="color: black;padding: 10px;">Next</a>
-                            </button>
-                
-                    </div>
-    
-                    </div>
-
-                    <div class="col-lg-4 col-md-12">
-                        <div class="container-contact100-form-btn">
-                    
-                            <button class="contact100-form-btn">
-                                Save&Submit
-                            </button>
-                
-                    </div>
-    
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-    
-    
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="container-contact100-form-btn">
-                    
-                            <button class="contact100-form-btn">
-                                <a href="stdcour" style="color: black;padding: 10px;">Next</a>
-                            </button>
-                
-                    </div>
-                        
-    
-                    </div>
-    
-                </div>
-            </form>
-        </div>
+          <div style="display: flex; justify-content: space-between">
+            <div class="/stdind">
+              <a href="/stdind">
+                <i class="fa fa-arrow-left"></i>
+              </a>
+            </div>
+            <div class="">
+              <a href="/stdcour"><i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+     <!-- Footer
+        ============================================= -->
+        <footer id="footer" class="dark">
+            <div class="container">
 
+                <!-- Footer Widgets
+                ============================================= -->
+                <div class="footer-widgets-wrap">
+
+                    <div class="row col-mb-50">
+                        <div class="col-lg-8">
+
+                            <div class="row col-mb-50">
+                                <div class="col-md-10">
+
+                                    <div class="widget clearfix">
+
+                                        <h1>ApplyUni</h1>
+
+                                        <p></p>
+
+                                        <div class="row" >
+                                            <div class="col-lg-6 col-md-12">
+                                                <address>
+                                                    <strong>Headquarters:</strong><br>
+                                                   Street<br>
+                                                   Malaysia<br>
+                                                </address>
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-12">
+                                                <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>
+                                            <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
+                                            <abbr title="Email Address"><strong>Email:</strong></abbr> info@Applyuni.com
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                            <div class="row col-mb-50">
+                                <div class="col-md-4 col-lg-12">
+                                    <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                                        <div class="row">
+                                          <!--                                            <div class="col-lg-6 bottommargin-sm">
+                                                <div class="counter counter-small"><span data-from="0" data-to="0" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+                                                <h5 class="mb-0">Total Registers</h5>
+                                            </div>
+                                            -->
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                               <div>
+                                  <h3>Follow Us on</h3s>
+                                  <div class="d-flex justify-content-center justify-content-md-end">
+
+                <a href="#" class="social-icon si-small si-borderless si-facebook">
+                  <i class="icon-facebook"></i>
+                  <i class="icon-facebook"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-twitter">
+                  <i class="icon-twitter"></i>
+                  <i class="icon-twitter"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-gplus">
+                  <i class="icon-gplus"></i>
+                  <i class="icon-gplus"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-pinterest">
+                  <i class="icon-pinterest"></i>
+                  <i class="icon-pinterest"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-vimeo">
+                  <i class="icon-vimeo"></i>
+                  <i class="icon-vimeo"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-github">
+                  <i class="icon-github"></i>
+                  <i class="icon-github"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-yahoo">
+                  <i class="icon-yahoo"></i>
+                  <i class="icon-yahoo"></i>
+                </a>
+
+                <a href="#" class="social-icon si-small si-borderless si-linkedin">
+                  <i class="icon-linkedin"></i>
+                  <i class="icon-linkedin"></i>
+                </a>
+              </div>
+
+                               </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div><!-- .footer-widgets-wrap end -->
+
+            </div>
+
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights">
+                <div class="container">
+
+                    <div class="row col-mb-30">
+
+                        <div class="col-md-6 text-center text-md-left">
+                            Copyrights &copy; 2020 All Rights Reserved by Applyuni.<br>
+                            <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                        </div>
+
+                        <div class="col-md-6 text-center text-md-right">
+
+
+                            <div class="clear"></div>
+
+                            <i class="fas fa-envelop"></i> info@applyuni.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div><!-- #copyrights end -->
+        </footer><!-- #footer end -->
 
 
     <div id="dropDownSelect1"></div>
 
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
     <script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
     <script src="{% static 'js/map-custom.js' %}"></script>
-<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="{% static 'js/main.js' %}"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'UA-23581568-13');
-</script>
-
-</body>
+      gtag("config", "UA-23581568-13");
+    </script>
+  </body>
 </html>

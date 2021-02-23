@@ -1,149 +1,188 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
-<head>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="SemiColonWeb" />
-
-	<!-- Stylesheets
+    <!-- Stylesheets
 	============================================= -->
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
 
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<!-- Document Title
+    <!-- Document Title
 	============================================= -->
-	<title>Browser Universities</title>
-	<style type="text/css">
-		@media (max-width:992px ){
-			.postcontent{
-				order: 13;
-			}
-		}
+    <title>Browser Universities</title>
+    <style type="text/css">
+      @media (max-width: 992px) {
+        .postcontent {
+          order: 13;
+        }
+      }
+    </style>
+  </head>
 
-	</style>
+  <body class="stretched">
+    {% extends "Student_portal/navbar.html" %} {% block content %}
 
-</head>
-
-<body class="stretched">
-
-
-	{% extends "Student_portal/navbar.html" %}
-    {% block content %}
-
-
-
-
-	<!-- Document Wrapper
+    <!-- Document Wrapper
 	============================================= -->
-	<div id="wrapper" class="clearfix">
-
-
-		<!-- Page Title
+    <div id="wrapper" class="clearfix">
+      <!-- Page Title
 		============================================= -->
-		<section id="page-title">
+      <section id="page-title">
+        <div class="container clearfix">
+          <h1>Universities</h1>
+          <span>Explore for the Rich</span>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/stdhome">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Saved</a></li>
+          </ol>
+        </div>
+      </section>
+      <!-- #page-title end -->
 
-
-
-			<div class="container clearfix">
-				<h1>Universities</h1>
-				<span>Explore for the Rich</span>
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item"><a href="#">Categorize</a></li>
-
-				</ol>
-			</div>
-
-		</section><!-- #page-title end -->
-
-		<!-- Content
+      <!-- Content
 		============================================= -->
-		<section id="content">
-			<div class="content-wrap">
-				<div class="container clearfix">
-					 <div class="s007 container" >
-      <form>
-        <div class="inner-form">
-          <div class="basic-search" style="margin-bottom: 5px;box-shadow: 0 8px 20px 0 rgb(0 0 0 / 15%);padding:10px;">
-            <div class="input-field" style="width: 100%;">
-              <div class="icon-wrap" style="position: absolute;padding:10px;">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
-                  <path d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z"></path>
-                </svg>
+      <section id="content">
+        <div class="content-wrap">
+          <div class="container clearfix">
+            <div class="s007 container">
+              <form>
+                <div class="inner-form">
+                  <div
+                    class="basic-search"
+                    style="
+                      margin-bottom: 5px;
+                      box-shadow: 0 8px 20px 0 rgb(0 0 0 / 15%);
+                      padding: 10px;
+                    "
+                  >
+                    <div class="input-field" style="width: 100%">
+                      <div
+                        class="icon-wrap"
+                        style="position: absolute; padding: 10px"
+                      >
+                        <svg
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <input
+                        id="search"
+                        type="text"
+                        placeholder="Search..."
+                        style="
+                          padding: 10px 110px 10px 70px;
+                          width: 100%;
+                          border: none;
+                          border-radius: 20px;
+                        "
+                      />
+                      <div
+                        class="result-count"
+                        style="
+                          display: flex;
+                          justify-content: flex-start;
+                          align-items: center;
+                          width: 110px;
+                          top: 0;
+                          right: 0;
+                          position: absolute;
+                          font-weight: 700;
+                          color: #555;
+                          height: 100%;
+                        "
+                      >
+                        <span> </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="row gutter-40 col-mb-80">
+              <!-- Post Content
+						============================================= -->
+              <div class="postcontent col-lg-12">
+                <div class="row">
+                  <div class="entry event col-12">
+                    <div class="grid-inner row no-gutters p-4">
+                      <div class="entry-image col-md-5 mb-md-0">
+                        <a href="#">
+                          <img
+                            src="https://www.collegeconsensus.com/wp-content/uploads/2016/12/o-HARVARD-UNIVERSITY-BUILDING-facebook.jpg"
+                            alt="Inventore voluptates velit totam ipsa tenetur"
+                          />
+                        </a>
+                      </div>
+                      <div class="col-md-7 pl-md-4">
+                        <div class="entry-title title-sm">
+                          <h2><a href="#">University Name</a></h2>
+                        </div>
+                        <div class="entry-meta">
+                          <ul>
+                            <li>
+                              <span class="badge badge-warning py-1 px-2"
+                                >Sem Type</span
+                              >
+                            </li>
+                            <li>
+                              <a href="#"
+                                ><i class="icon-time"></i> min fee - max fee</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#"
+                                ><i class="icon-map-marker2"></i>Address</a
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="entry-content">
+                          <a href="#" class="btn btn-secondary disabled"
+                            ><i class="fa fa-heart" style="color: red"></i
+                          ></a>
+                          <a href="#" class="btn btn-success">Apply Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <input id="search" type="text" placeholder="Search..."  style="padding: 10px 110px 10px 70px;width: 100%;border:none;border-radius: 20px; " />
-              <div class="result-count " style="display: flex;justify-content: flex-start;
-              align-items: center;
-              width: 110px;
-              top: 0;
-              right: 0;
-              position: absolute;
-              font-weight: 700;
-              color: #555;
-              height: 100%;
-              ">
-                <span> </span></div>
+              <!-- .postcontent end -->
             </div>
           </div>
-
-          </div>
-      </form>
+        </div>
+      </section>
+      <!-- #content end -->
     </div>
-
-					<div class="row gutter-40 col-mb-80">
-
-						<!-- Post Content
-						============================================= -->
-						<div class="postcontent col-lg-12 ">
-							<div class="row">
-								<div class="entry event col-12">
-									<div class="grid-inner row no-gutters p-4">
-										<div class="entry-image col-md-5 mb-md-0">
-											<a href="#">
-												<img src="https://www.collegeconsensus.com/wp-content/uploads/2016/12/o-HARVARD-UNIVERSITY-BUILDING-facebook.jpg" alt="Inventore voluptates velit totam ipsa tenetur">
-
-											</a>
-										</div>
-										<div class="col-md-7 pl-md-4">
-											<div class="entry-title title-sm">
-												<h2><a href="#">University Name</a></h2>
-											</div>
-											<div class="entry-meta">
-												<ul>
-													<li><span class="badge badge-warning py-1 px-2">Sem Type</span></li>
-													<li><a href="#"><i class="icon-time"></i> min fee - max fee</a></li>
-													<li><a href="#"><i class="icon-map-marker2"></i>Address</a></li>
-												</ul>
-											</div>
-											<div class="entry-content">
-
-												<a href="#" class="btn btn-secondary disabled"><i class="fa fa-heart" style="color: red"></i></a> <a href="#" class="btn btn-success">Apply Now</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div><!-- .postcontent end -->
-
-					</div>
-
-				</div>
-			</div>
-		</section><!-- #content end -->
-
-
-	</div><!-- #wrapper end -->
-    {% endblock  %}
-
-
-</body>
+    <!-- #wrapper end -->
+    {% endblock %}
+  </body>
 </html>
