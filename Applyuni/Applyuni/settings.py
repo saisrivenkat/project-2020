@@ -31,13 +31,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Portal',
+    'social_django',
+
+ 'allauth',   # <--
+ 'allauth.account',   # <--
+ 'allauth.socialaccount',   # <--
+ 'allauth.socialaccount.providers.google'
 ]
 
 MIDDLEWARE = [
@@ -46,8 +54,10 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'Applyuni.urls'
@@ -63,14 +73,34 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <-- Here
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
-
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+ 'allauth.account.auth_backends.AuthenticationBackend',
+ 'social_core.backends.linkedin.LinkedinOAuth2',
+ 
+)
 WSGI_APPLICATION = 'Applyuni.wsgi.application'
 
-
+SITE_ID=1
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -129,6 +159,18 @@ MEDIA_URL='/media/'
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-LOGIN_REDIRECT_URL = 'stddetail1'
+LOGIN_REDIRECT_URL = 'stdhome'
 SOCIAL_AUTH_FACEBOOK_KEY = '3703743136348709'  # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '34e99f1a409af9b42470ff912ea1c7f2'
+
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '78muuvvx87f12s'        #Client ID
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'Q1qUTP0hX9cnsVX1'  #Client Secret
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = ['r_basicprofile', 'r_emailaddress']
+SOCIAL_AUTH_LINKEDIN_OAUTH2_FIELD_SELECTORS = ['email-address', 'formatted-name', 'public-profile-url', 'picture-url']
+SOCIAL_AUTH_LINKEDIN_OAUTH2_EXTRA_DATA = [
+    ('id', 'id'),
+    ('formattedName', 'name'),
+    ('emailAddress', 'email_address'),
+    ('pictureUrl', 'picture_url'),
+    ('publicProfileUrl', 'profile_url'),
+]

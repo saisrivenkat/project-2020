@@ -5,7 +5,8 @@ from .views.mediator import appli
 from .views.studentsignup import studentsignup
 from .views.studentlogin import studentlogin
 from .views.studentlogin import logout
-
+from .views.facebook import HomeView
+from django.views.generic import TemplateView
 from .views.stdportal import stdhome
 
 
@@ -25,11 +26,18 @@ from .views.temp_pass import emailvalid
 from .views.temp_pass import tempvalidator
 
 urlpatterns=[
+path('oauth/', include('social_django.urls', namespace='social')),
+
 path('',home,name='home'),
 path('appli',appli,name='appli'),
 path('studentsignup',studentsignup.as_view(),name='studentsignup'),
 path('studentlogin',studentlogin.as_view(),name='studentloginpage'),
 path('logout',logout,name='logout'),
+
+path('facebook', HomeView.as_view(), name='facebook'),
+#path('google', HomeView.as_view(), name='google'),
+path('google', TemplateView.as_view(template_name="signup_forms/studentlogin.html")),
+path('accounts/', include('allauth.urls')),
 
 path('stdhome',stdhome,name='stdhome'),
 path('stdnav',stdnav,name='stdnav'),
