@@ -3,7 +3,7 @@ from django.shortcuts import render,redirect,HttpResponseRedirect
 from django.http import HttpResponse
 from django.views import View
 from django.core.files.storage import FileSystemStorage
-from Portal.models.stddetail import Stdacd,Stdpro,Stdind,Stdcour
+from Portal.models.stddetail import Stdacd,Stdpro,Stdind,Stdcour,Stdpro1
 from Portal.models.studentinfo import Student
 
 class stdind(View):
@@ -146,6 +146,8 @@ class stdcour(View):
         pcour5=request.POST.get('pcour5')
         pcour6=request.POST.get('pcour6')
 
+        print(pcoun1)
+
         stdcour=Stdcour(Applyingfor=Applyingfor,Date=Date,pcoun1=pcoun1,pcoun2=pcoun2,
         pcoun3=pcoun3,pcour4=pcour4,pcour5=pcour5,pcour6=pcour6,Email=Email)
         student=Student.get_student_by_email(Email)
@@ -162,34 +164,101 @@ class stdpro(View):
         student=Student.get_student_by_email(request.session['Email'])
         if(student):
             stdpro=Stdpro.get_stdpro_by_email(student.Email)
+            stdpro1=Stdpro1.get_stdpro1_by_email(student.Email)
         if(stdpro):
-            value={'Testeng': stdpro.Testeng,'Yeareng':stdpro.Yeareng,'Overallscoreeng':stdpro.Overallscoreeng,'Uploadeng':stdpro.Uploadeng,
-            'Testad': stdpro.Testad,'Yearad': stdpro.Yearad,'Overallscoread':stdpro.Overallscoread,'Uploadad':stdpro.Uploadad}
-            data={'value':value}
+            testeng=[]
+            yeareng=[]
+            overallscoreeng=[]
+            uploadeng=[]
+            for i in range(0,len(stdpro)):
+                testeng.append(stdpro[i].Testeng)
+                yeareng.append(stdpro[i].Yeareng)
+                overallscoreeng.append(stdpro[i].Overallscoreeng)
+                uploadeng.append(stdpro[i].Urleng)
+            list=[]
+            for i in range(0,len(stdpro)):
+                list.append({'Testeng':testeng[i],
+                         'Yeareng':yeareng[i],
+                              'Overallscoreeng':overallscoreeng[i],
+                                                  'Uploadeng':uploadeng[i]})
+            
+            data['stdpro']=list
+        if(stdpro1):
+            testad=[]
+            yearad=[]
+            overallscoread=[]
+            uploadad=[]
+            for i in range(0,len(stdpro1)):
+                testad.append(stdpro1[i].Testad)
+                yearad.append(stdpro1[i].Yearad)
+                overallscoread.append(stdpro1[i].Overallscoread)
+                uploadad.append(stdpro1[i].Urlad)
+            list1=[]
+            for i in range(0,len(stdpro1)):
+                list1.append({'Testad':testad[i],
+                         'Yearad':yearad[i],
+                              'Overallscoread':overallscoread[i],
+                                                  'Uploadad':uploadad[i]})
+            data['stdpro1']=list1
+            
         return render(request,'Contactform_v9/professional.html',data)
     def post(self,request):
         Email=request.session['Email']
-        Testeng=request.POST.get('Testeng')
-        Yeareng=request.POST.get('Yeareng')
-        Overallscoreeng=request.POST.get('Overallscoreeng')
+        Testeng=request.POST.getlist('Testeng[]')
+        Yeareng=request.POST.getlist('Yeareng[]')
+        Overallscoreeng=request.POST.getlist('Overallscoreeng[]')
 
-        Testad=request.POST.get('Testad')
-        Yearad=request.POST.get('Yearad')
-        Overallscoread=request.POST.get('Overallscoread')
+        Testad=request.POST.getlist('Testad[]')
+        Yearad=request.POST.getlist('Yearad[]')
+        Overallscoread=request.POST.getlist('Overallscoread[]')
         fs=FileSystemStorage()
-        Uploadeng=request.FILES['Uploadeng']
-        name3=fs.save(Uploadeng.name,Uploadeng)
+        Uploadeng=request.FILES.getlist('Uploadeng[]')
+        print(Testeng)
+        print(Yeareng)
+        print(Overallscoreeng)
+        print(Uploadeng)
+        print(Testad)
+        print(Yearad)
+        print(Overallscoread)
+        Uploadad=request.FILES.getlist('Uploadad[]')
+        print(Uploadad)
+        urleng=[]
+        urlad=[]
+        for i in range(0,len(Testeng)):
+            testeng=Testeng[i]
+            yeareng=Yeareng[i]
+            overallscoreeng=Overallscoreeng[i]
+            uploadeng=Uploadeng[i]
+            name=fs.save(uploadeng.name,uploadeng)
+            url=fs.url(name)
+            urleng.append(url)
+            stdpro=Stdpro(Email=Email,Testeng=testeng,Yeareng=yeareng,Overallscoreeng=overallscoreeng,Uploadeng=uploadeng,Urleng=url)
+            stdpro.register()
+
+        for i in range(0,len(Testad)):
+            testad=Testad[i]
+            yearad=Yearad[i]
+            overallscoread=Overallscoread[i]
+            uploadad=Uploadad[i]
+            name=fs.save(uploadad.name,uploadad)
+            url=fs.url(name)
+            urlad.append(url)
+            stdpro1=Stdpro1(Email=Email,Testad=testad,Yearad=yearad,Overallscoread=overallscoread,Uploadad=uploadad,Urlad=url)
+            stdpro1.register()
+
+
+        '''name3=fs.save(Uploadeng.name,Uploadeng)
         url3=fs.url(name3)
 
-        Uploadad=request.FILES['Uploadad']
+        
         name5=fs.save(Uploadad.name,Uploadad)
         url5=fs.url(name5)
         
-        print(url3)
-        stdpro=Stdpro(Email=Email,Testeng=Testeng,Yeareng=Yeareng,Overallscoreeng=Overallscoreeng,Uploadeng=Uploadeng,
+        print(url3)'''
+        '''stdpro=Stdpro(Email=Email,Testeng=Testeng,Yeareng=Yeareng,Overallscoreeng=Overallscoreeng,Uploadeng=Uploadeng,
             Testad=Testad,Yearad=Yearad,Overallscoread=Overallscoread,Uploadad=Uploadad)
-        stdpro.register()
-        value={'Testeng': Testeng,'Yeareng':Yeareng,'Overallscoreeng': Overallscoreeng,'Uploadeng':url3,
-            'Testad': Testad,'Yearad': Yearad,'Overallscoread':Overallscoread,'Uploadad':url5}
+        stdpro.register()'''
+        value={'Testeng': Testeng,'Yeareng':Yeareng,'Overallscoreeng': Overallscoreeng,'Uploadeng':urleng,
+            'Testad': Testad,'Yearad': Yearad,'Overallscoread':Overallscoread,'Uploadad':urlad}
         data={'value':value}
-        return render(request,'Contactform_v9/professional.html',data)
+        return redirect('stdhome')

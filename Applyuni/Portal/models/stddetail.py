@@ -104,11 +104,8 @@ class Stdpro(models.Model):
     Yeareng=models.CharField(max_length=10,null=True)
     Overallscoreeng=models.CharField(max_length=10,null=True)
     Uploadeng=models.FileField(upload_to="",null=True)
+    Urleng=models.CharField(max_length=10,null=True)
 
-    Testad=models.CharField(max_length=50,null=True)
-    Yearad=models.CharField(max_length=10,null=True)
-    Overallscoread=models.CharField(max_length=10,null=True)
-    Uploadad=models.FileField(upload_to="",null=True)
     def __str__(self):
         return self.Email
     def register(self):
@@ -121,7 +118,32 @@ class Stdpro(models.Model):
             #print(Stddetail.objects.all())
             #print(Stddetail.objects.get(Email=Email))
             try:
-                return Stdpro.objects.get(Email=Email)
+                return Stdpro.objects.all().filter(Email=Email)
+            except:
+                False
+
+
+class Stdpro1(models.Model):
+    Email=models.EmailField()
+    Testad=models.CharField(max_length=50,null=True)
+    Yearad=models.CharField(max_length=10,null=True)
+    Overallscoread=models.CharField(max_length=10,null=True)
+    Uploadad=models.FileField(upload_to="",null=True)
+    Urlad=models.CharField(max_length=10,null=True)
+    
+    def __str__(self):
+        return self.Email
+    def register(self):
+        self.save()
+        return True
+    @staticmethod
+
+    def get_stdpro1_by_email(Email):
+            #print(Email)
+            #print(Stddetail.objects.all())
+            #print(Stddetail.objects.get(Email=Email))
+            try:
+                return Stdpro1.objects.all().filter(Email=Email)
             except:
                 False
 

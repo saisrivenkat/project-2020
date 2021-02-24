@@ -103,10 +103,9 @@
           <span class="contact100-form-title">
             <h5>
               English Proficiency &nbsp &nbsp <a id="Add"><i class="fa fa-plus fa-2x p-2" aria-hidden="true" style="cursor: pointer; ;"></i></a>
-             
             </h5>
           </span>
-
+          {% for record in stdpro %}
           <div
             class="wrap-input100 validate-input rs1-wrap-input100"
             data-validate=""
@@ -115,10 +114,13 @@
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
-              name="Testeng"
-              value="{{value.Testeng}}"
+              name="Testeng[]"
             >
-              <option selected>Test</option>
+            {% if record.Testeng %}
+            <option selected>{{record.Testeng}}</option>
+            {% else %}
+              <option selected>Choose Test</option>
+              {% endif %}
               <option>IELTS</option>
               <option>Tofel</option>
             </select>
@@ -133,9 +135,9 @@
             <input
               class="input100"
               type="date"
-              name="Yeareng"
-              value="{{value.Yeareng}}"
+              name="Yeareng[]"
               placeholder="Year Taken"
+              value="{{record.Yeareng}}"
             />
             <span class="focus-input100"></span>
           </div>
@@ -146,9 +148,9 @@
             <input
               class="input100"
               type="text"
-              name="Overallscoreeng"
-              value="{{value.Overallscoreeng}}"
+              name="Overallscoreeng[]"
               placeholder="Overall Score"
+              value="{{record.Overallscoreeng}}"
             />
             <span class="focus-input100"></span>
           </div>
@@ -160,20 +162,26 @@
             <input
               type="file"
               class="form-control-file input100"
-              name="Uploadeng"
+              name="Uploadeng[]"
               id="Uploadeng"
+              
             />
-            <a href="{{value.Uploadeng}}">clickhere</a>
+            <a href="{{record.Uploadeng}}">clickhere</a>
 
             <span class="focus-input100"></span>
           </div>
+
+          {% endfor %}
 
           <div id="new"></div>
 
           <hr style="" />
 
-          <h6 class="p-3">Admission Test</h6>
+          <h6>Admission Test
+            <a id="Add1"><i class="fa fa-plus fa-2x p-2" aria-hidden="true" style="cursor: pointer; ;"></i></a>
+          </h6>
 
+         {% for record in stdpro1 %}
           <div
             class="wrap-input100 validate-input rs1-wrap-input100"
             data-validate="Please enter your Test"
@@ -182,12 +190,19 @@
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
+              name="Testad[]"
             >
-              <option selected>Test</option>
+            {% if record.Testad %}
+            <option selected>{{record.Testad}}</option>
+            {% else %}
+              <option selected>Choose the Test</option>
+              {% endif %}
               <option>IELTS</option>
               <option>Tofel</option>
             </select>
           </div>
+          
+
           <div
             class="wrap-input100 validate-input rs1-wrap-input100"
             data-validate="Please enter the Year Taken"
@@ -195,9 +210,9 @@
             <input
               class="input100"
               type="date"
-              name="Testad"
-              value="{{value.Testad}}"
+              name="Yearad[]"
               placeholder="Year Taken"
+              value="{{record.Yearad}}"
             />
             <span class="focus-input100"></span>
           </div>
@@ -209,9 +224,9 @@
             <input
               class="input100"
               type="text"
-              name="Overallscoread"
-              value="{{value.Overallscoread}}"
+              name="Overallscoread[]"
               placeholder="Overall Score"
+              value="{{record.Overallscoread}}"
             />
             <span class="focus-input100"></span>
           </div>
@@ -223,14 +238,16 @@
             <input
               type="file"
               class="form-control-file "
-              name="Uploadad"
+              name="Uploadad[]"
               id="Uploadad"
               style="padding: 20px;width: 100%;margin-top: 10px;border: none;"
             />
-            <a href="{{value.Uploadad}}">clickhere</a>
+            <a href="{{record.Uploadad}}">clickhere</a>
 
             <span class="focus-input100"></span>
           </div>
+             {% endfor %}
+          <div id="new1"></div>
 
           <div style="display: flex; justify-content: space-between">
             <div class="">
@@ -436,11 +453,17 @@
     </script>
 
     <script>
-      var app =
-        '<div><hr> <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name"><select id="inputState" class="form-control input100" style="border:none;height: 62px;"> <option selected>Test</option><option selected>Test</option> </select></div> <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name"><input class="input100" type="date" name="name" placeholder="Year Taken"> <span class="focus-input100"></span></div></div><div  class="wrap-input100 validate-input rs1-wrap-input100"data-validate="Please enter your first name"><input class="input100" type="text"name="Overallscoreeng"value="{{value.Overallscoreeng}}"placeholder="Overall Score"/><span class="focus-input100"></span></div><div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your first name"> <input type="file"class="form-control-file input100" name="Uploadeng" id="Uploadeng"/><a href="{{value.Uploadeng}}">clickhere</a><span class="focus-input100"></span></div></div></div>';
+      var app = '<div> <div class="wrap-input100 validate-input rs1-wrap-input100" data-validate=""> <select id="inputState" class="form-control input100"  style="border: none; height: 62px" name="Testeng[]"  value="{{value.Testeng}}"><option selected>Test</option> <option>IELTS</option> <option>Tofel</option></select> <div>  <span class="focus-input100"></span></div></div><divclass="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter the Year Taken" > <input  class="input100"  type="date"  name="Yeareng[]"    value="{{value.Yeareng}}" placeholder="Year Taken" /> <span class="focus-input100"></span></div><div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please enter your Overall Score" ><input  class="input100" type="text" name="Overallscoreeng[]" value="{{value.Overallscoreeng}}""placeholder="Overall Score" /><span class="focus-input100"></span></div><div class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please uplode the Doc" > <input type="file" class="form-control-file input100"name="Uploadeng[]"  id="Uploadeng" /><a href="{{value.Uploadeng}}">clickhere</a><span class="focus-input100"></span></div></div>';
       $(document).ready(function () {
         $("#Add").on("click", function () {
           $("#new").append(app);
+        });
+      });
+
+      $(document).ready(function () {
+        var app1 = '<div><div class="wrap-input100 validate-input rs1-wrap-input100"  data-validate="Please enter your Test" ><select  id="inputState"  class="form-control input100"style="border: none; height: 62px"  name="Testad[]"  value="{{value.Testad}}" ><option selected>Test</option><option>IELTS</option> <option>Tofel</option></select></div> <div class="wrap-input100 validate-input rs1-wrap-input100"  data-validate="Please enter the Year Taken" >  <input   class="input100"  type="date"   name="Yearad[]"  value="{{value.Yearad}}"  placeholder="Year Taken"  />  <span class="focus-input100"></span> </div>  <div     class="wrap-input100 validate-input rs1-wrap-input100"  data-validate="Please enter your Overall Score"  >     <input class="input100" type="text" name="Overallscoread[]"  value="{{value.Overallscoread}}"  placeholder="Overall Score" />  <span class="focus-input100"></span></div> <div      class="wrap-input100 validate-input rs1-wrap-input100" data-validate="Please Uplode the Doc"  ><input type="file" class="form-control-file"  name="Uploadad[]"id="Uploadad"style="padding: 20px;width: 100%;margin-top: 10px;border: none;" /><a href="{{value.Uploadad}}">clickhere</a><span class="focus-input100"></span> </div></div>'
+        $("#Add1").on("click", function () {
+          $("#new1").append(app1);
         });
       });
     </script>

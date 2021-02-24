@@ -188,7 +188,11 @@
                   style="border: none; height: 62px"
                   name="Sscgrading"
                 >
+                {% if value.Sscgrading %}
+                <option selected>{{value.Sscgrading}}</option>
+                {% else %}
                   <option selected>Grading Schema</option>
+                  {% endif %}
                   <option>%</option>
                   <option>marks</option>
                 </select>
@@ -303,7 +307,11 @@
                   style="border: none; height: 62px"
                   name="Intgrading"
                 >
+                {% if value.Intgrading %}
+                <option selected>{{value.Intgrading}}</option>
+                {% else %}
                   <option selected>Grading Schema</option>
+                  {% endif %}
                   <option>%</option>
                   <option>marks</option>
                 </select>
@@ -418,7 +426,11 @@
                   style="border: none; height: 62px"
                   name="Unigrading"
                 >
+                {% if value.Unigrading %}
+                  <option selected>{{value.Unigrading}}</option>
+                  {% else %}
                   <option selected>Grading Schema</option>
+                  {% endif %}
                   <option>%</option>
                   <option>marks</option>
                 </select>

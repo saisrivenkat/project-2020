@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect,HttpResponseRedirect
+import requests,json
 from django.contrib.auth.hashers import check_password
 from django.http import HttpResponse
 from Portal.models.studentinfo import Student
@@ -14,6 +15,16 @@ class studentlogin(View):
         return render(request,'signup_forms/studentlogin.html')
 
     def post(self,request):
+        cap_token=request.POST.get('g-recaptcha-response')
+        cap_url="https://www.google.com/recaptcha/api/siteverify"
+        cap_secret="6Ldz2mUaAAAAAEdaQk09xE1rimhHzmwCplGIXeqo"
+        cap_data={'secret':cap_secret,'response':cap_token}
+        cap_server_response=requests.post(url=cap_url,data=cap_data)
+        cap_json=json.loads(cap_server_response.text)
+        if(cap_json['success']==False):
+            error_message='Captcha is invalid!! Try Again Pls!'
+            return render(request,'signup_forms/studentlogin.html',{'error':error_message})
+
         print("vastunda")
         Email=request.POST.get('Email')
         Password=request.POST.get('Password')

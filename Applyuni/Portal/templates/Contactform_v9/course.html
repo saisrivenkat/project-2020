@@ -109,7 +109,11 @@
               style="border: none; height: 62px"
               name="Applyingfor"
             >
+            {% if value.Applyingfor %}
+            <option selected>Applying for</option>
+            {% else %}
               <option selected>Applying For</option>
+              {% endif %}
               <option>UG</option>
               <option>PG</option>
               <option>Diploma-Foundation</option>
@@ -143,10 +147,14 @@
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
-              name="Pcoun1"
-              value="{{value.Pcoun1}}"
+              name="pcoun1"
+              value="{{value.pcoun1}}"
             >
+            {% if value.pcoun1 %}
+            <option selected>{{value.pcoun1}}</option>
+            {% else %}
               <option selected>Preferred Country 1</option>
+              {% endif %}
               <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -404,10 +412,14 @@
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
-              name="Pcoun2"
-              value="{{value.Pcoun2}}"
+              name="pcoun2"
+              value="{{value.pcoun2}}"
             >
+            {% if value.pcoun2 %}
+            <option selected>{{value.pcoun2}}</option>
+            {% else %}
               <option selected>Preferred Country 2</option>
+              {% endif %}
               <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -665,10 +677,14 @@
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
-              name="Pcoun3"
-              value="{{value.Pcoun3}}"
+              name="pcoun3"
+              value="{{value.pcoun3}}"
             >
+            {%if value.pcoun3 %}
+            <option selected>{{value.pcoun3}}</option>
+            {% else %}
               <option selected>Preferred Country 3</option>
+              {% endif %}
               <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
@@ -929,10 +945,14 @@
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
-              name="Pcour4"
-              value="{{value.Pcour4}}"
+              name="pcour4"
+              value="{{value.pcour4}}"
             >
+            {% if value.pcour4 %}
+            <option selected>{{value.pcour4}}</option>
+            {% else %}
               <option selected>Course 1</option>
+              {% endif %}
               <option>Bachelors</option>
               <option>Ms</option>
             </select>
@@ -948,10 +968,14 @@
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
-              name="Pcour5"
-              value="{{value.Pcour5}}"
+              name="pcour5"
+              value="{{value.pcour5}}"
             >
+            {% if value.pcour5 %}
+            <option selected>{{value.pcour5}}</option>
+            {% else %}
               <option selected>Course 2</option>
+              {% endif %}
               <option>CSE</option>
               <option>ECE</option>
               <option>MECH</option>
@@ -969,10 +993,14 @@
               id="inputState"
               class="form-control input100"
               style="border: none; height: 62px"
-              name="Pcour6"
-              value="{{value.Pcour6}}"
+              name="pcour6"
+              value="{{value.pcour6}}"
             >
+            {% if value.pcour6 %}
+            <option selected>{{value.pcour6}}</option>
+            {% else %}
               <option selected>Course 3</option>
+              {% endif %}
               <option>Bachelors</option>
               <option>Ms</option>
             </select>
